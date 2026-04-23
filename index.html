@@ -7,142 +7,107 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      transition: background 0.3s, color 0.3s;
+    :root {
+      --accent: #38bdf8;
+      --dark-bg: #0f172a;
+      --light-bg: #f8fafc;
+      --card-dark: #1e293b;
+      --card-light: #e2e8f0;
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      transition: background 0.3s, color 0.3s; 
     }
 
-    body.light-mode {
-      background: #f8fafc;
-      color: #1e293b;
+    body.dark-mode { background: var(--dark-bg); color: #e2e8f0; }
+    body.light-mode { background: var(--light-bg); color: #1e293b; }
+
+    .navbar { background: transparent; padding: 20px 0; }
+    .navbar-brand { font-weight: 700; font-size: 1.5rem; transition: color 0.3s; }
+    body.dark-mode .navbar-brand { color: #e2e8f0; }
+    body.light-mode .navbar-brand { color: #1e293b; }
+
+    .hero { 
+      height: 80vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
     }
 
-    body.dark-mode {
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-
-    .navbar {
-      background: transparent;
-    }
-
-    .navbar-light-mode .navbar-brand {
-      color: #1e293b !important;
-    }
-
-    .navbar-dark-mode .navbar-brand {
-      color: #e2e8f0 !important;
-    }
-
-    .hero {
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: background 0.3s;
-    }
-
-    .hero.light-mode {
-      background: radial-gradient(circle at top, #e0f2fe, #bae6fd);
-    }
-
-    .hero.dark-mode {
-      background: radial-gradient(circle at top, #1e293b, #020617);
-    }
-
+    .section-padding { padding: 80px 0; }
+    
     .card-custom {
-      background: #1e293b;
+      height: 100%;
+      background: var(--card-dark);
       border: none;
       border-radius: 16px;
-      padding: 20px;
-      transition: transform 0.3s ease, background 0.3s, color 0.3s;
+      padding: 25px;
+      transition: transform 0.3s ease;
     }
 
     body.light-mode .card-custom {
-      background: #e2e8f0;
+      background: var(--card-light);
       color: #1e293b;
     }
 
-    .card-custom:hover {
-      transform: translateY(-5px);
-    }
-
-    .btn-custom {
-      background: #38bdf8;
-      border: none;
-      font-weight: 600;
-      color: #020617;
+    .card-custom:hover { transform: translateY(-5px); }
+    
+    .btn-custom { 
+      background: var(--accent); 
+      color: #020617; 
+      font-weight: 600; 
+      border-radius: 8px; 
+      padding: 12px 28px; 
+      border: none; 
       transition: background 0.3s;
     }
+    .btn-custom:hover { background: #0ea5e9; color: #020617; }
 
-    .btn-custom:hover {
-      background: #0ea5e9;
-    }
-
-    .highlight-text {
-      color: #f1f5f9;
-    }
-
-    body.light-mode .highlight-text {
-      color: #1e293b;
-    }
-
-    .footer {
-      padding: 40px 0;
-      text-align: center;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark-mode .footer {
-      background: #020617;
-    }
-
-    body.light-mode .footer {
-      background: #e2e8f0;
-      color: #1e293b;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 1000;
-      padding: 10px 15px;
-      border-radius: 8px;
-      background: #38bdf8;
+    .theme-toggle { 
+      position: fixed; 
+      top: 20px; 
+      right: 20px; 
+      z-index: 1000; 
+      cursor: pointer; 
+      background: var(--accent); 
       color: #020617;
-      font-weight: bold;
+      padding: 8px 16px; 
+      border-radius: 8px; 
+      font-weight: bold; 
     }
+
+    .footer { padding: 60px 0; text-align: center; }
+    body.dark-mode .footer { background: #020617; }
+    body.light-mode .footer { background: #e2e8f0; }
+
+    a { text-decoration: none; }
+    .project-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
   </style>
 </head>
 <body class="dark-mode">
 
-<!-- Theme Toggle Button -->
 <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg" id="navbar">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Patrick Sandoval</a>
+<nav class="navbar">
+  <div class="container text-center">
+    <a class="navbar-brand mx-auto" href="#">Patrick Sandoval</a>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero dark-mode" id="hero">
+<section class="hero" id="hero">
   <div class="container">
-    <h1>Building Systems That Solve Real Problems</h1>
-    <p class="mt-3">Java • SQL • Automation • Business Systems</p>
+    <h1 class="display-4 fw-bold">Building Systems That Solve Real Problems</h1>
+    <p class="lead mt-3">Java • SQL • Automation • Business Systems</p>
     <a href="#projects" class="btn btn-custom mt-4">View My Work</a>
   </div>
 </section>
 
-<!-- About -->
-<section class="section">
+<section class="section-padding">
   <div class="container">
     <h2 class="mb-4">About Me</h2>
-    <p>
+    <p class="lead" style="max-width: 800px;">
       I am a self-taught developer focused on building systems and logic-driven solutions.
       I specialize in analyzing business workflows and transforming them into efficient digital systems.
       My goal is to help small businesses become more data-driven and organized.
@@ -150,95 +115,80 @@
   </div>
 </section>
 
-<!-- Tech Stack and Tools -->
-<section class="section">
+<section class="section-padding" id="projects">
   <div class="container">
-    <h2 class="mb-4">Tech Stack</h2>
-    <div class="row g-3">
-      <div class="col-md-4"><div class="card-custom">Java (Object-Oriented Design & Application Development)</div></div>
-      <div class="col-md-4"><div class="card-custom">SQL (Database Design, Query Optimization & Data Handling)</div></div>
-      <div class="col-md-4"><div class="card-custom">Frontend Development (HTML, CSS, Bootstrap, JavaScript)</div></div>
-      <div class="col-md-4"><div class="card-custom">Data Analysis (Google Sheets, QUERY Functions)</div></div>
-      <div class="col-md-4"><div class="card-custom">Workflow Automation (Zapier Integrations)</div></div>
-      <div class="col-md-4"><div class="card-custom">Automation Scripting (AutoHotkey for Task Automation)</div></div>
-    </div>
+    <h2 class="mb-5">Live Projects</h2>
+    <div class="row g-4">
+      
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h4>Casino Web Apps</h4>
+          <p>I worked on all the promotional images and visuals for these websites. I produced 100+ images and GIFs per website across 4 different apps.</p>
+          <div class="mt-3">
+            <a href="https://777-full.com" target="_blank" class="project-link me-3">777-Full</a>
+            <a href="https://www.betbbrok.com" target="_blank" class="project-link me-3">BetBbrok</a>
+            <a href="https://365xv.vip" target="_blank" class="project-link me-3">365XV</a>
+            <a href="https://a66bet.win" target="_blank" class="project-link">A66Bet</a>
+          </div>
+        </div>
+      </div>
 
-    <h2 class="mt-5 mb-4">Tools</h2>
-    <div class="row g-3">
-      <div class="col-md-4"><div class="card-custom">Canva (Design & Visual Content)</div></div>
-      <div class="col-md-4"><div class="card-custom">Xero (Accounting & Business Tools)</div></div>
-      <div class="col-md-4"><div class="card-custom">FlutterFlow (Low-Code App Development)</div></div>
-      <div class="col-md-4"><div class="card-custom">Git & GitHub (Version Control & Collaboration)</div></div>
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h4>Web Blog Community Platform</h4>
+          <p>A platform for an organization where they set up monthly gatherings and share community updates.</p>
+          <a href="https://kaizenpath.org.au/" target="_blank" class="project-link">Visit Website →</a>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="card-custom">
+          <h4>Figma Layout Structure & Planning</h4>
+          <p>A showcase of what I am capable of in terms of layout planning and design potential. This represents the overview of my design logic and UI structure.</p>
+          <a href="https://poppy-thread-67721289.figma.site/#" target="_blank" class="project-link">View Figma Showcase →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Projects -->
-<section class="section" id="projects">
+<section class="section-padding">
   <div class="container">
-    <h2 class="mb-4">Projects</h2>
+    <h2 class="mb-4">Internal Systems & Logic</h2>
     <div class="row g-4">
       <div class="col-md-6">
-  <div class="card-custom">
-    <h5>Micro ERP Demand Analysis Sheet</h5>
-    <p>Architected a Google Sheets-based ERP with advanced QUERY functions to calculate product demand from sales and lost sales, helping businesses manage inventory efficiently.</p>
-  </div>
-</div>
-<div class="col-md-6">
-  <div class="card-custom">
-    <h5>Logic-Based POS & Sales Tracking System</h5>
-    <p>Designed a POS system for small businesses to track inventory, sales, and operations with clear data flow and actionable insights.</p>
-  </div>
-</div>
-<div class="col-md-6">
-  <div class="card-custom">
-    <h5>Financial & Expense Management</h5>
-    <p>Consolidated client receipts, organized expenses, and built a fully structured income statement and financial sheet for accurate reporting and decision-making.</p>
-  </div>
-</div>
-<div class="col-md-6">
-  <div class="card-custom">
-    <h5>Xero Integration & Template Setup</h5>
-    <p>Migrated client contacts into Xero and created invoice templates, streamlining billing processes and ensuring accurate financial operations.</p>
-  </div>
-</div>
-    </div>
-    <div class="text-center mt-5">
-      <p class="highlight-text">Looking to streamline your business operations or automate workflows?</p>
-      <a href="#contact" class="btn btn-custom">Let’s Work Together</a>
+        <div class="card-custom">
+          <h5>Micro ERP Demand Analysis Sheet</h5>
+          <p class="small">Architected a Google Sheets-based ERP with advanced QUERY functions to calculate product demand from sales and lost sales.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h5>Logic-Based POS & Sales Tracking System</h5>
+          <p class="small">Designed a POS system for small businesses to track inventory, sales, and operations with clear data flow.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section class="footer" id="contact">
+<footer class="footer" id="contact">
   <div class="container">
     <h3>Contact</h3>
     <p>Email: patrickangelosandoval@gmail.com</p>
-    <p>GitHub: github.com/frxstph</p>
-    <p>LinkedIn: linkedin.com/in/patrick-sandoval-8133aa132</p>
-    <p class="mt-4">&copy; 2026 Patrick Sandoval. All rights reserved.</p>
+    <div class="mt-4">
+      <a href="https://github.com/frxstph" class="mx-2 project-link">GitHub</a>
+      <a href="https://linkedin.com/in/patrick-sandoval-8133aa132" class="mx-2 project-link">LinkedIn</a>
+    </div>
+    <p class="mt-5 small opacity-50">&copy; 2026 Patrick Sandoval. All rights reserved.</p>
   </div>
-</section>
+</footer>
 
 <script>
-    function toggleTheme() {
+  function toggleTheme() {
     const body = document.body;
     body.classList.toggle('dark-mode');
     body.classList.toggle('light-mode');
-
-    const hero = document.getElementById('hero');
-    hero.classList.toggle('dark-mode');
-    hero.classList.toggle('light-mode');
-
-    const navbar = document.getElementById('navbar');
-    if(body.classList.contains('light-mode')){
-      navbar.classList.remove('navbar-dark-mode');
-      navbar.classList.add('navbar-light-mode');
-    } else {
-      navbar.classList.remove('navbar-light-mode');
-      navbar.classList.add('navbar-dark-mode');
-    }
   }
 </script>
 
