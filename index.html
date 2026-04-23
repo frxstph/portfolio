@@ -15,6 +15,7 @@
       --light-bg: #f8fafc;
       --card-dark: #1e293b;
       --card-light: #e2e8f0;
+      --cursor-color: #38bdf8;
     }
     
     body { 
@@ -25,22 +26,34 @@
     }
 
     body.dark-mode { background: var(--dark-bg); color: #e2e8f0; }
-    body.light-mode { background: var(--light-bg); color: #1e293b; }
+    body.light-mode { background: var(--light-bg); color: #1e293b; --cursor-color: #0f172a; }
 
+    /* Cursor Spotlight Glow - Works in both modes now */
     #cursor-light {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none; z-index: 0;
+    }
+    
+    body.dark-mode #cursor-light {
       background: radial-gradient(600px circle at var(--x) var(--y), rgba(56, 189, 248, 0.08), transparent 80%);
     }
-    body.light-mode #cursor-light { display: none; }
 
+    body.light-mode #cursor-light {
+      background: radial-gradient(400px circle at var(--x) var(--y), rgba(15, 23, 42, 0.05), transparent 80%);
+    }
+
+    /* Custom Animated Cursor */
     .custom-cursor {
-      width: 20px; height: 20px; border: 2px solid var(--accent);
+      width: 20px; height: 20px; 
+      border: 2px solid var(--cursor-color);
       border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999;
-      transition: transform 0.1s ease-out, background 0.2s ease;
+      transition: transform 0.1s ease-out, background 0.2s ease, border-color 0.3s;
       transform: translate(-50%, -50%);
     }
-    .cursor-hover { transform: translate(-50%, -50%) scale(2.5); background: rgba(56, 189, 248, 0.15); }
+    .cursor-hover { 
+      transform: translate(-50%, -50%) scale(2.5); 
+      background: rgba(56, 189, 248, 0.15); 
+    }
 
     .navbar { background: transparent; padding: 20px 0; position: relative; z-index: 10; }
     .navbar-brand { font-weight: 700; font-size: 1.5rem; }
@@ -66,8 +79,6 @@
     .project-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
     .project-link:hover { text-decoration: underline; }
 
-    
-    
     @keyframes float {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
@@ -85,7 +96,6 @@
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     }
 
-    
     .tool-card:hover i { 
       filter: grayscale(0) opacity(1); 
       animation: float 2s ease-in-out infinite;
@@ -99,6 +109,7 @@
     .tool-card:hover .si-figma { color: #F24E1E; }
     .tool-card:hover .si-shopify { color: #95BF47; }
     .tool-card:hover .si-wix { color: #FFFFFF; }
+    body.light-mode .tool-card:hover .si-wix { color: #000000; }
     .tool-card:hover .si-flutter { color: #02569B; }
 
     .tech-pill {
@@ -140,12 +151,12 @@
       <div class="col-md-4"><div class="tech-pill">Automation (Zapier/AHK)</div></div>
     </div>
     <div class="row g-4 text-center">
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-canva"></i><span class="tool-label"></span></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-xero"></i><span class="tool-label"></span></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-figma"></i><span class="tool-label"></span></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-shopify"></i><span class="tool-label"></span></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-wix"></i><span class="tool-label"></span></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-flutter"></i><span class="tool-label"></span></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-canva"></i></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-xero"></i></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-figma"></i></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-shopify"></i></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-wix"></i></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-flutter"></i></div></div>
     </div>
   </div>
 </section>
@@ -216,8 +227,9 @@
     const body = document.body;
     body.classList.toggle('dark-mode');
     body.classList.toggle('light-mode');
-    body.style.cursor = body.classList.contains('light-mode') ? 'default' : 'none';
-    cursor.style.display = body.classList.contains('light-mode') ? 'none' : 'block';
+    // Keep cursor custom in both modes
+    body.style.cursor = 'none';
+    cursor.style.display = 'block';
   }
 </script>
 </body>
