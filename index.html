@@ -6,6 +6,8 @@
   <title>Patrick Sandoval Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v11/font/simple-icons.min.css">
+  
   <style>
     :root {
       --accent: #38bdf8;
@@ -17,103 +19,111 @@
     
     body { 
       font-family: 'Inter', sans-serif; 
-      transition: background 0.3s, color 0.3s; 
+      transition: background 0.3s, color 0.3s;
+      cursor: none; 
+      overflow-x: hidden;
     }
 
     body.dark-mode { background: var(--dark-bg); color: #e2e8f0; }
     body.light-mode { background: var(--light-bg); color: #1e293b; }
 
-    .navbar { background: transparent; padding: 20px 0; }
-    .navbar-brand { font-weight: 700; font-size: 1.5rem; transition: color 0.3s; }
+    #cursor-light {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0;
+      background: radial-gradient(600px circle at var(--x) var(--y), rgba(56, 189, 248, 0.08), transparent 80%);
+    }
+    body.light-mode #cursor-light { display: none; }
+
+    .custom-cursor {
+      width: 20px; height: 20px; border: 2px solid var(--accent);
+      border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999;
+      transition: transform 0.1s ease-out, background 0.2s ease;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-hover { transform: translate(-50%, -50%) scale(2.5); background: rgba(56, 189, 248, 0.15); }
+
+    .navbar { background: transparent; padding: 20px 0; position: relative; z-index: 10; }
+    .navbar-brand { font-weight: 700; font-size: 1.5rem; }
     body.dark-mode .navbar-brand { color: #e2e8f0; }
     body.light-mode .navbar-brand { color: #1e293b; }
 
-    .hero { 
-      height: 80vh; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      text-align: center; 
-    }
-
-    .section-padding { padding: 80px 0; }
+    .hero { height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; z-index: 1; }
+    .section-padding { padding: 80px 0; position: relative; z-index: 1; }
     
     .card-custom {
-      height: 100%;
-      background: var(--card-dark);
-      border: none;
-      border-radius: 16px;
-      padding: 25px;
-      transition: transform 0.3s ease;
+      height: 100%; background: var(--card-dark); border: none; border-radius: 16px;
+      padding: 25px; transition: transform 0.3s ease; position: relative; z-index: 2;
     }
-
-    body.light-mode .card-custom {
-      background: var(--card-light);
-      color: #1e293b;
-    }
-
-    .card-custom:hover { transform: translateY(-5px); }
+    body.light-mode .card-custom { background: var(--card-light); color: #1e293b; }
+    .card-custom:hover { transform: translateY(-5px); border: 1px solid var(--accent); }
     
-    .btn-custom { 
-      background: var(--accent); 
-      color: #020617; 
-      font-weight: 600; 
-      border-radius: 8px; 
-      padding: 12px 28px; 
-      border: none; 
-      transition: background 0.3s;
-    }
-    .btn-custom:hover { background: #0ea5e9; color: #020617; }
+    .btn-custom { background: var(--accent); color: #020617; font-weight: 600; border-radius: 8px; padding: 12px 28px; border: none; }
+    .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--accent); color: #020617; padding: 8px 16px; border-radius: 8px; font-weight: bold; }
 
-    .theme-toggle { 
-      position: fixed; 
-      top: 20px; 
-      right: 20px; 
-      z-index: 1000; 
-      cursor: pointer; 
-      background: var(--accent); 
-      color: #020617;
-      padding: 8px 16px; 
-      border-radius: 8px; 
-      font-weight: bold; 
+    .footer { padding: 60px 0; text-align: center; position: relative; z-index: 1; }
+    
+    a, button { cursor: none; }
+    .project-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+    .project-link:hover { text-decoration: underline; }
+
+    
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
 
-    .footer { padding: 60px 0; text-align: center; }
-    body.dark-mode .footer { background: #020617; }
-    body.light-mode .footer { background: #e2e8f0; }
+    .tool-card {
+      text-align: center; transition: 0.3s; padding: 15px; border-radius: 12px;
+      border: 1px solid transparent;
+    }
 
-    a { text-decoration: none; }
-    .project-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+    .tool-card i { 
+      font-size: 5.5rem; display: block; margin-bottom: 10px; 
+      filter: grayscale(1) opacity(0.6); 
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    }
 
-    /* Tech Stack Styling */
+    
+    .tool-card:hover i { 
+      filter: grayscale(0) opacity(1); 
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .tool-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; opacity: 0.6; transition: 0.3s; }
+    .tool-card:hover .tool-label { opacity: 1; color: var(--accent); }
+    
+    .tool-card:hover .si-canva { color: #00C4CC; }
+    .tool-card:hover .si-xero { color: #13B5EA; }
+    .tool-card:hover .si-figma { color: #F24E1E; }
+    .tool-card:hover .si-shopify { color: #95BF47; }
+    .tool-card:hover .si-wix { color: #FFFFFF; }
+    .tool-card:hover .si-flutter { color: #02569B; }
+
     .tech-pill {
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--accent);
-      border-radius: 8px;
-      padding: 10px 15px;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      height: 100%;
-      display: flex;
-      align-items: center;
+      background: rgba(56, 189, 248, 0.1); color: var(--accent);
+      border-radius: 8px; padding: 10px 15px; font-size: 0.9rem;
+      margin-bottom: 10px; height: 100%; display: flex; align-items: center;
+      transition: 0.3s;
     }
-    body.light-mode .tech-pill {
-      background: rgba(15, 23, 42, 0.05);
-      color: #0369a1;
-    }
+    .tech-pill:hover { background: var(--accent); color: #020617; transform: scale(1.05); }
+
   </style>
 </head>
 <body class="dark-mode">
 
+<div id="cursor-light"></div>
+<div class="custom-cursor"></div>
 <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
 
 <nav class="navbar">
   <div class="container text-center">
-    <a class="navbar-brand mx-auto" href="#">Patrick Sandoval</a>
+    <a class="navbar-brand mx-0" href="#">Patrick Sandoval</a>
   </div>
 </nav>
 
-<section class="hero" id="hero">
+<section class="hero">
   <div class="container">
     <h1 class="display-4 fw-bold">Building Systems That Solve Real Problems</h1>
     <p class="lead mt-3">Java • SQL • Automation • Business Systems</p>
@@ -123,45 +133,27 @@
 
 <section class="section-padding">
   <div class="container">
-    <h2 class="mb-4">About Me</h2>
-    <p class="lead" style="max-width: 800px;">
-      I am a self-taught developer focused on building systems and logic-driven solutions.
-      I specialize in analyzing business workflows and transforming them into efficient digital systems.
-      My goal is to help small businesses become more data-driven and organized.
-    </p>
-  </div>
-</section>
-
-<section class="section-padding">
-  <div class="container">
-    <h2 class="mb-4">Tech Stack</h2>
-    <div class="row g-3">
-      <div class="col-md-4"><div class="tech-pill">Java</div></div>
-      <div class="col-md-4"><div class="tech-pill">SQL</div></div>
-      <div class="col-md-4"><div class="tech-pill">Frontend (HTML, CSS, JS, Bootstrap)</div></div>
-      <div class="col-md-4"><div class="tech-pill">Data Analysis (Google Sheets, QUERY, Power BI)</div></div>
-      <div class="col-md-4"><div class="tech-pill">Workflow Automation (Zapier)</div></div>
-      <div class="col-md-4"><div class="tech-pill">Scripting (Shell, AutoHotkey)</div></div>
+    <h2 class="mb-4">Tech Stack & Tools</h2>
+    <div class="row g-3 mb-5">
+      <div class="col-md-4"><div class="tech-pill">Java & SQL Backend</div></div>
+      <div class="col-md-4"><div class="tech-pill">Frontend (HTML/CSS/JS)</div></div>
+      <div class="col-md-4"><div class="tech-pill">Automation (Zapier/AHK)</div></div>
     </div>
-
-    <h2 class="mt-5 mb-4">Tools</h2>
-    <div class="row g-3">
-      <div class="col-md-3"><div class="tech-pill">Canva</div></div>
-      <div class="col-md-3"><div class="tech-pill">Xero</div></div>
-      <div class="col-md-3"><div class="tech-pill">Figma</div></div>
-      <div class="col-md-3"><div class="tech-pill">Shopify</div></div>
-      <div class="col-md-3"><div class="tech-pill">Wix</div></div>
-      <div class="col-md-3"><div class="tech-pill">FlutterFlow</div></div>
-      <div class="col-md-3"><div class="tech-pill">Git & GitHub</div></div>
+    <div class="row g-4 text-center">
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-canva"></i><span class="tool-label"></span></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-xero"></i><span class="tool-label"></span></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-figma"></i><span class="tool-label"></span></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-shopify"></i><span class="tool-label"></span></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-wix"></i><span class="tool-label"></span></div></div>
+      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-flutter"></i><span class="tool-label"></span></div></div>
     </div>
   </div>
 </section>
 
 <section class="section-padding" id="projects">
   <div class="container">
-    <h2 class="mb-5">Live Projects</h2>
+    <h2 class="mb-5">Featured Projects</h2>
     <div class="row g-4">
-
       <div class="col-md-6">
         <div class="card-custom">
           <h4>Kaizen Path</h4>
@@ -169,7 +161,6 @@
           <a href="https://kaizenpath.org.au/" target="_blank" class="project-link">Visit Website →</a>
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="card-custom">
           <h4>MEDIX</h4>
@@ -177,10 +168,10 @@
           <a href="https://poppy-thread-67721289.figma.site/#" target="_blank" class="project-link">View Showcase →</a>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="card-custom">
           <h4>Casino Web Apps</h4>
-          <p>Worked on all the promotional images and visuals for these websites. Produced 400+ images and GIFs.</p>
+          <p>Designed and produced 400+ promotional images and animated GIFs for high-traffic gaming platforms.</p>
           <div class="mt-3">
             <a href="https://777-full.com" target="_blank" class="project-link me-3">777-Full</a>
             <a href="https://www.betbbrok.com" target="_blank" class="project-link me-3">BetBbr</a>
@@ -191,49 +182,43 @@
       </div>
     </div>
   </div>
-
-  
-</section>
-  
-<section class="section-padding">
-  <div class="container">
-    <h2 class="mb-4">Internal Systems & Logic</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card-custom">
-          <h5>Micro ERP Demand Analysis Sheet</h5>
-          <p class="small">Google Sheets-based ERP with advanced QUERY functions to calculate product demand from sales and lost sales.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card-custom">
-          <h5>POS & Sales Tracking System</h5>
-          <p class="small">Designed a POS system for small businesses to track inventory, sales, and operations with clear data flow.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <footer class="footer" id="contact">
   <div class="container">
     <h3>Contact</h3>
-    <p>Email: patrickangelosandoval@gmail.com</p>
+    <p>patrickangelosandoval@gmail.com</p>
     <div class="mt-4">
       <a href="https://github.com/frxstph" class="mx-2 project-link">GitHub</a>
       <a href="https://linkedin.com/in/patrick-sandoval-8133aa132" class="mx-2 project-link">LinkedIn</a>
     </div>
-    <p class="mt-5 small opacity-50">&copy; 2026 Patrick Sandoval. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
+  const light = document.getElementById('cursor-light');
+  const cursor = document.querySelector('.custom-cursor');
+
+  window.addEventListener('mousemove', (e) => {
+    light.style.setProperty('--x', e.clientX + 'px');
+    light.style.setProperty('--y', e.clientY + 'px');
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  const interactables = document.querySelectorAll('a, button, .btn, .theme-toggle, .card-custom, .tool-card, .tech-pill');
+  interactables.forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+  });
+
   function toggleTheme() {
     const body = document.body;
     body.classList.toggle('dark-mode');
     body.classList.toggle('light-mode');
+    body.style.cursor = body.classList.contains('light-mode') ? 'default' : 'none';
+    cursor.style.display = body.classList.contains('light-mode') ? 'none' : 'block';
   }
 </script>
-
 </body>
 </html>
