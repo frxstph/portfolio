@@ -84,6 +84,23 @@
 
     a { text-decoration: none; }
     .project-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+
+    /* Tech Stack Styling */
+    .tech-pill {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    body.light-mode .tech-pill {
+      background: rgba(15, 23, 42, 0.05);
+      color: #0369a1;
+    }
   </style>
 </head>
 <body class="dark-mode">
@@ -112,6 +129,28 @@
       I specialize in analyzing business workflows and transforming them into efficient digital systems.
       My goal is to help small businesses become more data-driven and organized.
     </p>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <h2 class="mb-4">Tech Stack</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><div class="tech-pill">Java (Object-Oriented Design)</div></div>
+      <div class="col-md-4"><div class="tech-pill">SQL (Database Design & Queries)</div></div>
+      <div class="col-md-4"><div class="tech-pill">Frontend (HTML, CSS, JS, Bootstrap)</div></div>
+      <div class="col-md-4"><div class="tech-pill">Data Analysis (Google Sheets, QUERY)</div></div>
+      <div class="col-md-4"><div class="tech-pill">Workflow Automation (Zapier)</div></div>
+      <div class="col-md-4"><div class="tech-pill">Scripting (AutoHotkey)</div></div>
+    </div>
+
+    <h2 class="mt-5 mb-4">Tools</h2>
+    <div class="row g-3">
+      <div class="col-md-3"><div class="tech-pill">Canva</div></div>
+      <div class="col-md-3"><div class="tech-pill">Xero</div></div>
+      <div class="col-md-3"><div class="tech-pill">FlutterFlow</div></div>
+      <div class="col-md-3"><div class="tech-pill">Git & GitHub</div></div>
+    </div>
   </div>
 </section>
 
