@@ -28,21 +28,18 @@
     body.dark-mode { background: var(--dark-bg); color: #e2e8f0; }
     body.light-mode { background: var(--light-bg); color: #1e293b; --cursor-color: #0f172a; }
 
-    /* Cursor Spotlight Glow - Works in both modes now */
+    /* Desktop Cursor & Light */
     #cursor-light {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none; z-index: 0;
     }
-    
     body.dark-mode #cursor-light {
       background: radial-gradient(600px circle at var(--x) var(--y), rgba(56, 189, 248, 0.08), transparent 80%);
     }
-
     body.light-mode #cursor-light {
       background: radial-gradient(400px circle at var(--x) var(--y), rgba(15, 23, 42, 0.05), transparent 80%);
     }
 
-    /* Custom Animated Cursor */
     .custom-cursor {
       width: 20px; height: 20px; 
       border: 2px solid var(--cursor-color);
@@ -50,16 +47,39 @@
       transition: transform 0.1s ease-out, background 0.2s ease, border-color 0.3s;
       transform: translate(-50%, -50%);
     }
-    .cursor-hover { 
-      transform: translate(-50%, -50%) scale(2.5); 
-      background: rgba(56, 189, 248, 0.15); 
+    .cursor-hover { transform: translate(-50%, -50%) scale(2.5); background: rgba(56, 189, 248, 0.15); }
+
+    /* Mobile Ripple Effect */
+    .ripple {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      animation: ripple-animation 0.6s ease-out forwards;
+      z-index: 10000;
+      opacity: 0.5;
+    }
+
+    @keyframes ripple-animation {
+      to {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+      }
+    }
+
+    /* Media Query to restore default cursor on mobile */
+    @media (pointer: coarse) {
+      body { cursor: auto !important; }
+      .custom-cursor, #cursor-light { display: none !important; }
+      a, button, .btn, .tech-pill, .casino-division { cursor: pointer !important; }
     }
 
     .navbar { background: transparent; padding: 20px 0; position: relative; z-index: 10; }
     .navbar-brand { font-weight: 700; font-size: 1.5rem; }
-    body.dark-mode .navbar-brand { color: #e2e8f0; }
-    body.light-mode .navbar-brand { color: #1e293b; }
-
     .hero { height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; z-index: 1; }
     .section-padding { padding: 80px 0; position: relative; z-index: 1; }
     
@@ -67,44 +87,34 @@
       height: 100%; background: var(--card-dark); border: none; border-radius: 16px;
       padding: 25px; transition: transform 0.3s ease; position: relative; z-index: 2;
     }
-    body.light-mode .card-custom { background: var(--card-light); color: #1e293b; }
+    body.light-mode .card-custom { background: var(--card-light); }
     .card-custom:hover { transform: translateY(-5px); border: 1px solid var(--accent); }
     
+    .casino-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+    @media (max-width: 768px) { .casino-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .casino-division {
+      background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 12px;
+      text-align: center; transition: 0.3s; border: 1px solid transparent;
+      display: flex; align-items: center; justify-content: center; font-weight: 600;
+    }
+    .casino-division:hover { background: rgba(56, 189, 248, 0.1); border-color: var(--accent); color: var(--accent); transform: scale(1.05); }
+
     .btn-custom { background: var(--accent); color: #020617; font-weight: 600; border-radius: 8px; padding: 12px 28px; border: none; }
     .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--accent); color: #020617; padding: 8px 16px; border-radius: 8px; font-weight: bold; }
-
-    .footer { padding: 60px 0; text-align: center; position: relative; z-index: 1; }
     
-    a, button { cursor: none; }
+    .footer { padding: 60px 0; text-align: center; position: relative; z-index: 1; }
     .project-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
-    .project-link:hover { text-decoration: underline; }
 
     @keyframes float {
-      0% { transform: translateY(0px); }
+      0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
     }
-
-    .tool-card {
-      text-align: center; transition: 0.3s; padding: 15px; border-radius: 12px;
-      border: 1px solid transparent;
-    }
-
-    .tool-card i { 
-      font-size: 5.5rem; display: block; margin-bottom: 10px; 
-      filter: grayscale(1) opacity(0.6); 
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    }
-
-    .tool-card:hover i { 
-      filter: grayscale(0) opacity(1); 
-      animation: float 2s ease-in-out infinite;
-    }
-
-    .tool-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; opacity: 0.6; transition: 0.3s; }
-    .tool-card:hover .tool-label { opacity: 1; color: var(--accent); }
+    .tool-card { text-align: center; padding: 15px; }
+    .tool-card i { font-size: 5.5rem; display: block; filter: grayscale(1) opacity(0.6); transition: 0.4s; }
+    .tool-card:hover i { filter: grayscale(0) opacity(1); animation: float 2s ease-in-out infinite; }
     
-    .tool-card:hover .si-canva { color: #00C4CC; }
+.tool-card:hover .si-canva { color: #00C4CC; }
     .tool-card:hover .si-xero { color: #13B5EA; }
     .tool-card:hover .si-figma { color: #F24E1E; }
     .tool-card:hover .si-shopify { color: #95BF47; }
@@ -112,14 +122,18 @@
     body.light-mode .tool-card:hover .si-wix { color: #000000; }
     .tool-card:hover .si-flutter { color: #02569B; }
 
+
+
+
+
+body.dark-mode .navbar-brand { color: #e2e8f0; }
+    body.light-mode .navbar-brand { color: #1e293b; }
+
     .tech-pill {
       background: rgba(56, 189, 248, 0.1); color: var(--accent);
-      border-radius: 8px; padding: 10px 15px; font-size: 0.9rem;
-      margin-bottom: 10px; height: 100%; display: flex; align-items: center;
-      transition: 0.3s;
+      border-radius: 8px; padding: 10px 15px; transition: 0.3s;
     }
     .tech-pill:hover { background: var(--accent); color: #020617; transform: scale(1.05); }
-
   </style>
 </head>
 <body class="dark-mode">
@@ -129,9 +143,7 @@
 <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
 
 <nav class="navbar">
-  <div class="container text-center">
-    <a class="navbar-brand mx-0" href="#">Patrick Sandoval</a>
-  </div>
+  <div class="container text-center"><a class="navbar-brand mx-0" href="#">Patrick Sandoval</a></div>
 </nav>
 
 <section class="hero">
@@ -166,14 +178,14 @@
     <h2 class="mb-5">Featured Projects</h2>
     <div class="row g-4">
       <div class="col-md-6">
-        <div class="card-custom">
+        <div class="card-custom clickable-card" data-url="https://kaizenpath.org.au/">
           <h4>Kaizen Path</h4>
           <p>A community-led, non-profit organization dedicated to strengthening men’s physical, mental, and emotional wellbeing.</p>
           <a href="https://kaizenpath.org.au/" target="_blank" class="project-link">Visit Website →</a>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card-custom">
+        <div class="card-custom clickable-card" data-url="https://poppy-thread-67721289.figma.site/#">
           <h4>MEDIX</h4>
           <p>A project showcasing UI structure and layout design of a concept system.</p>
           <a href="https://poppy-thread-67721289.figma.site/#" target="_blank" class="project-link">View Showcase →</a>
@@ -182,12 +194,11 @@
       <div class="col-md-12">
         <div class="card-custom">
           <h4>Casino Web Apps</h4>
-          <p>Designed and produced 400+ promotional images and animated GIFs for high-traffic gaming platforms.</p>
-          <div class="mt-3">
-            <a href="https://777-full.com" target="_blank" class="project-link me-3">777-Full</a>
-            <a href="https://www.betbbrok.com" target="_blank" class="project-link me-3">BetBbr</a>
-            <a href="https://365xv.vip" target="_blank" class="project-link me-3">365XV</a>
-            <a href="https://a66bet.win" target="_blank" class="project-link">A66Bet</a>
+          <div class="casino-grid">
+            <div class="casino-division" onclick="window.open('https://777-full.com', '_blank')">777-Full</div>
+            <div class="casino-division" onclick="window.open('https://www.betbbrok.com', '_blank')">BetBbr</div>
+            <div class="casino-division" onclick="window.open('https://365xv.vip', '_blank')">365XV</div>
+            <div class="casino-division" onclick="window.open('https://a66bet.win', '_blank')">A66Bet</div>
           </div>
         </div>
       </div>
@@ -210,6 +221,7 @@
   const light = document.getElementById('cursor-light');
   const cursor = document.querySelector('.custom-cursor');
 
+  // Mouse Move Logic (Desktop Only)
   window.addEventListener('mousemove', (e) => {
     light.style.setProperty('--x', e.clientX + 'px');
     light.style.setProperty('--y', e.clientY + 'px');
@@ -217,19 +229,33 @@
     cursor.style.top = e.clientY + 'px';
   });
 
-  const interactables = document.querySelectorAll('a, button, .btn, .theme-toggle, .card-custom, .tool-card, .tech-pill');
+  // Tap Ripple Logic (Mobile Only)
+  window.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple';
+    ripple.style.left = touch.clientX + 'px';
+    ripple.style.top = touch.clientY + 'px';
+    document.body.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+
+  const interactables = document.querySelectorAll('a, button, .btn, .theme-toggle, .card-custom, .tool-card, .tech-pill, .casino-division');
   interactables.forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
   });
 
+  document.querySelectorAll('.clickable-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const url = this.getAttribute('data-url');
+      if (url) window.open(url, '_blank');
+    });
+  });
+
   function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-    body.classList.toggle('light-mode');
-    // Keep cursor custom in both modes
-    body.style.cursor = 'none';
-    cursor.style.display = 'block';
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
   }
 </script>
 </body>
