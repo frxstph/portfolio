@@ -134,6 +134,25 @@ body.dark-mode .navbar-brand { color: #e2e8f0; }
       border-radius: 8px; padding: 10px 15px; transition: 0.3s;
     }
     .tech-pill:hover { background: var(--accent); color: #020617; transform: scale(1.05); }
+
+    /* Design work */
+    .eyebrow { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .case-psr { display: grid; gap: 12px; margin: 0; }
+    .case-psr dt { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; opacity: .65; font-weight: 600; }
+    .case-psr dd { margin: 0 0 6px; }
+    .pair-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 576px) { .pair-imgs { grid-template-columns: 1fr; } }
+    .shot { position: relative; display: block; border-radius: 12px; overflow: hidden; }
+    .shot img { width: 100%; height: auto; display: block; transition: transform .35s ease; }
+    .shot:hover img { transform: scale(1.02); }
+    .shot .tag { position: absolute; left: 10px; top: 10px; font-size: .72rem; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: rgba(2, 6, 23, .78); color: #fff; }
+    .pair-title { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .pair-title span { font-size: .85rem; opacity: .65; }
+    .format-chip { display: inline-block; font-size: .78rem; padding: 4px 9px; border-radius: 6px; background: rgba(56, 189, 248, 0.1); color: var(--accent); margin: 0 6px 6px 0; }
+    figure.design-fig { margin: 0; }
+    figure.design-fig figcaption { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; margin-top: 8px; }
+    figure.design-fig figcaption span:last-child { opacity: .65; }
+    @media (prefers-reduced-motion: reduce) { .shot img { transition: none; } .shot:hover img { transform: none; } }
   </style>
 </head>
 <body class="dark-mode">
@@ -148,9 +167,9 @@ body.dark-mode .navbar-brand { color: #e2e8f0; }
 
 <section class="hero">
   <div class="container">
-    <h1 class="display-4 fw-bold">Building Systems That Solve Real Problems</h1>
-    <p class="lead mt-3">Java • SQL • Automation • Business Systems</p>
-    <a href="#projects" class="btn btn-custom mt-4">View My Work</a>
+    <h1 class="display-4 fw-bold">Promo Design and Web Systems for Online Brands</h1>
+    <p class="lead mt-3">Graphic Design (Canva + AI) • Websites • Automation</p>
+    <a href="#design" class="btn btn-custom mt-4">See My Design Work</a>
   </div>
 </section>
 
@@ -173,9 +192,76 @@ body.dark-mode .navbar-brand { color: #e2e8f0; }
   </div>
 </section>
 
+<section class="section-padding" id="design">
+  <div class="container">
+    <p class="eyebrow mb-2">Design Work</p>
+    <h2 class="mb-3">Complete promo sets: every size, one consistent look</h2>
+    <p class="mb-4" style="max-width: 62ch;">I design ads, pop-ups, carousel banners, phone guides and share cards for online brands, and adapt the same campaign from one brand to the next. Copy is in Brazilian Portuguese, checked for accents and typos.</p>
+    <div class="mb-5">
+      <span class="format-chip">Ad 920×720</span><span class="format-chip">Pop-up 920×720</span><span class="format-chip">Carousel 1020×300</span><span class="format-chip">Tile 500×100</span><span class="format-chip">Phone guide 1440×996</span><span class="format-chip">Story 720×1280</span><span class="format-chip">Share 1280×720</span><span class="format-chip">Banner 960×224</span>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-5">
+        <p class="eyebrow mb-2">Case study 01</p>
+        <h3 class="mb-3">One campaign, two brands</h3>
+        <dl class="case-psr">
+          <dt>Brief</dt><dd>The same promotions had to launch on two sister platforms, 567Rio and 123Rio, without either one looking like a copy of the other.</dd>
+          <dt>What I did</dt><dd>Kept the layout and message hierarchy, then rebuilt each brand's world: green and gold vs. cream and deep teal, Brazil-jersey mascots vs. carnival mascots, and each logo lockup.</dd>
+          <dt>Result</dt><dd>Matching sets the team can launch side by side, with the same mascot kept for each promo across every format.</dd>
+        </dl>
+      </div>
+      <div class="col-lg-7 d-grid gap-4">
+        <div class="card-custom">
+          <div class="pair-title"><h5 class="mb-0">Daily reward: R$ 888</h5><span>Ad · 920×720</span></div>
+          <div class="pair-imgs">
+            <a class="shot" href="img/design/567_ad1.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad1.webp" alt="567Rio ad: 12 times a day, max reward R$ 888, lion mascot on a throne" loading="lazy" width="920" height="720"></a>
+            <a class="shot" href="img/design/123_ad1.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad1.webp" alt="123Rio ad: same R$ 888 promo with a carnival rabbit mascot" loading="lazy" width="920" height="720"></a>
+          </div>
+        </div>
+        <div class="card-custom">
+          <div class="pair-title"><h5 class="mb-0">VIP members</h5><span>Ad · 920×720</span></div>
+          <div class="pair-imgs">
+            <a class="shot" href="img/design/567_ad3.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad3.webp" alt="567Rio VIP ad with tiger and rabbit in Brazil jerseys" loading="lazy" width="920" height="720"></a>
+            <a class="shot" href="img/design/123_ad3.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad3.webp" alt="123Rio VIP ad with carnival tiger and rabbit holding a VIP coin" loading="lazy" width="920" height="720"></a>
+          </div>
+        </div>
+        <div class="card-custom">
+          <div class="pair-title"><h5 class="mb-0">Download the app</h5><span>Ad with QR · 920×720</span></div>
+          <div class="pair-imgs">
+            <a class="shot" href="img/design/567_ad6.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad6.webp" alt="567Rio app download ad with QR code and toucan mascot" loading="lazy" width="920" height="720"></a>
+            <a class="shot" href="img/design/123_ad6.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad6.webp" alt="123Rio app download ad with QR code and carnival monkey mascot" loading="lazy" width="920" height="720"></a>
+          </div>
+        </div>
+        <div class="card-custom">
+          <div class="pair-title"><h5 class="mb-0">Savings fund, 50%</h5><span>Ad with steps · 920×720</span></div>
+          <div class="pair-imgs">
+            <a class="shot" href="img/design/567_ad8.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad8.webp" alt="567Rio savings fund ad with three-step explainer and panda mascot" loading="lazy" width="920" height="720"></a>
+            <a class="shot" href="img/design/123_ad8.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad8.webp" alt="123Rio savings fund ad with steps, carnival panda and phone mockup" loading="lazy" width="920" height="720"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-4">
+      <div class="col-12">
+        <p class="eyebrow mb-2">Case study 02</p>
+        <h3 class="mb-2">Every format, one brand</h3>
+        <p class="mb-4" style="max-width: 62ch;">123Rio needed its promos in every placement on its site and app. I designed each size from one system (cream panel, teal border, logo tab, one mascot per promo), including step-by-step phone guides that walk users through the app.</p>
+      </div>
+      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_pop1.webp" target="_blank"><img src="img/design/123_pop1.webp" alt="123Rio referral pop-up: invite 1 person, get R$ 120" loading="lazy" width="920" height="720"></a><figcaption><span>Referral pop-up</span><span>920×720</span></figcaption></figure></div>
+      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_pop4.webp" target="_blank"><img src="img/design/123_pop4.webp" alt="123Rio 100% bonus pop-up with tiger and bull mascots" loading="lazy" width="920" height="720"></a><figcaption><span>Bonus code pop-up</span><span>920×720</span></figcaption></figure></div>
+      <div class="col-12"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_phone_missions.webp" target="_blank"><img src="img/design/123_phone_missions.webp" alt="123Rio phone guide: three phone screens showing how to reach the missions page" loading="lazy" width="1100" height="761"></a><figcaption><span>Phone guide: how to find missions</span><span>1440×996</span></figcaption></figure></div>
+      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_banner2.webp" target="_blank"><img src="img/design/123_banner2.webp" alt="123Rio carousel banner: R$ 888 reward with rabbit mascot" loading="lazy" width="1020" height="300"></a><figcaption><span>Carousel banner</span><span>1020×300</span></figcaption></figure></div>
+      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_banner3.webp" target="_blank"><img src="img/design/123_banner3.webp" alt="123Rio carousel banner: invite someone, earn up to R$ 120" loading="lazy" width="1020" height="300"></a><figcaption><span>Carousel banner</span><span>1020×300</span></figcaption></figure></div>
+      <div class="col-12"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_share.webp" target="_blank"><img src="img/design/123_share.webp" alt="123Rio share card: invite someone to earn up to R$ 120, carnival girl mascot" loading="lazy" width="1100" height="619"></a><figcaption><span>Referral share card</span><span>1280×720</span></figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
 <section class="section-padding" id="projects">
   <div class="container">
-    <h2 class="mb-5">Featured Projects</h2>
+    <h2 class="mb-5">Web Projects</h2>
     <div class="row g-4">
       <div class="col-md-6">
         <div class="card-custom clickable-card" data-url="https://kaizenpath.org.au/">
