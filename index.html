@@ -1,348 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patrick Sandoval Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v11/font/simple-icons.min.css">
-  
-  <style>
-    :root {
-      --accent: #38bdf8;
-      --dark-bg: #0f172a;
-      --light-bg: #f8fafc;
-      --card-dark: #1e293b;
-      --card-light: #e2e8f0;
-      --cursor-color: #38bdf8;
-    }
-    
-    body { 
-      font-family: 'Inter', sans-serif; 
-      transition: background 0.3s, color 0.3s;
-      cursor: none; 
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patrick Sandoval, Promo Designer</title>
+<meta name="description" content="Patrick Sandoval designs complete promo kits for online brands: 10 brand kits, 730+ files, made in Canva with AI tools. Based in Quezon City, working remote.">
+<meta property="og:title" content="Patrick Sandoval, Promo Designer">
+<meta property="og:description" content="Promo kits for 10 brands: logo sets, promo cards, pop-ups, banners and phone guides.">
+<meta property="og:image" content="img/work/f/i008.webp">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f4f4f4; --surface-2:#e9e9e9; --ink:#111111; --muted:#6b6b6b;
+  --accent:#1a4be0; --accent-2:#1640c4; --accent-ink:#ffffff; --field:#111111; --field-ink:#ffffff;
+  --m:20px; --gap:20px;
+  --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
+  --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
+  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
+  --step-display:clamp(3.25rem,1.2rem + 8.4vw,9rem);
+  --ease-out:cubic-bezier(0.22,1,0.36,1); --ease-in-out:cubic-bezier(0.76,0,0.24,1); --ease-soft:cubic-bezier(0.33,1,0.68,1);
+  --row:104px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%;height:auto}
+a{color:var(--accent);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{color:var(--accent-2)}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+::selection{background:var(--accent);color:#fff}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul{list-style:none;padding:0}
+.wrap{padding-inline:var(--m)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:var(--step-body);text-decoration:none;border-radius:0;transition:transform 140ms var(--ease-out),background-color 180ms ease}
+.btn:hover{background:var(--accent-2);color:var(--accent-ink)}
+.btn:active{transform:scale(.97)}
 
-    body.dark-mode { background: var(--dark-bg); color: #e2e8f0; }
-    body.light-mode { background: var(--light-bg); color: #1e293b; --cursor-color: #0f172a; }
+/* ---------- hero ---------- */
+.band{padding-top:20px;align-items:start;font-size:var(--step-small);line-height:1.45}
+.band > div{grid-column:span 3}
+.wordmark{font-weight:600;color:var(--ink);text-decoration:none;font-size:var(--step-body)}
+.band .role{display:block;color:var(--muted)}
+.nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+.nav a{color:var(--ink);text-decoration:none;font-size:var(--step-body);position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 200ms var(--ease-out)}
+.nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1)}
+.band .where{color:var(--ink)}
+.band .where span{display:block;color:var(--muted)}
+.band .reach{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.band .reach a.mail{color:var(--ink);font-size:var(--step-small)}
+.hero-head{padding-top:clamp(40px,7vh,88px);padding-bottom:28px;align-items:end}
+.display{grid-column:1 / span 9;font-size:var(--step-display);font-weight:400;letter-spacing:-0.035em;line-height:.95}
+.hero-sub{grid-column:10 / span 3;font-size:var(--step-body);line-height:1.45;padding-bottom:.6em}
 
-    /* Desktop Cursor & Light */
-    #cursor-light {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none; z-index: 0;
-    }
-    body.dark-mode #cursor-light {
-      background: radial-gradient(600px circle at var(--x) var(--y), rgba(56, 189, 248, 0.08), transparent 80%);
-    }
-    body.light-mode #cursor-light {
-      background: radial-gradient(400px circle at var(--x) var(--y), rgba(15, 23, 42, 0.05), transparent 80%);
-    }
+/* ---------- the sheet ---------- */
+.sheet{display:flex;flex-wrap:wrap;gap:8px;padding-inline:var(--m);padding-bottom:12px}
+.run,.run-frames{display:contents}
+.run-title{flex:0 0 auto;width:176px;height:var(--row);overflow:hidden;background:var(--brand);color:#fff;padding:9px 11px;display:flex;flex-direction:column;font-size:var(--step-small);line-height:1.3}
+.run-name{font-weight:600;font-size:var(--step-body);line-height:1.15}
+.run-meta{opacity:1}
+.run-desc{margin-top:auto}
+.fr{height:var(--row);aspect-ratio:var(--r);flex:0 0 auto;background:var(--surface);overflow:hidden;transition:opacity 220ms ease,transform 160ms var(--ease-out)}
+.fr img{width:100%;height:100%;object-fit:cover;transition:transform 400ms var(--ease-soft)}
+.fr:hover img{transform:scale(1.06)}
+.fr:active{transform:scale(.97)}
+@media (hover:hover){
+  .sheet:has(.fr:hover) .run:not(:hover) .fr{opacity:.32}
+}
+.sheet-note{grid-column:1 / -1;font-size:var(--step-small);color:var(--muted);padding:14px 0 0}
 
-    .custom-cursor {
-      width: 20px; height: 20px; 
-      border: 2px solid var(--cursor-color);
-      border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999;
-      transition: transform 0.1s ease-out, background 0.2s ease, border-color 0.3s;
-      transform: translate(-50%, -50%);
-    }
-    .cursor-hover { transform: translate(-50%, -50%) scale(2.5); background: rgba(56, 189, 248, 0.15); }
+/* ---------- showcase ---------- */
+.same{padding-top:clamp(120px,14vw,200px)}
+.same-aside{grid-column:1 / span 3;display:flex;flex-direction:column}
+.same-aside h2{font-size:var(--step-lead);font-weight:600;line-height:1.15;letter-spacing:-0.01em}
+.same-aside .intro{margin-top:14px;font-size:var(--step-body)}
+.same-aside .note{margin-top:auto;font-size:var(--step-small);line-height:1.45;padding-bottom:4px}
+.same-main{grid-column:4 / span 9}
+.lift{position:relative;background:var(--surface);overflow:hidden;max-width:852px}
+.lift img{width:100%;height:auto}
+.lift-cap{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:var(--step-small);max-width:852px}
+.lift-cap b{font-weight:600}
+.picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px 10px;margin-top:28px}
+.pick{display:block;width:100%;text-align:left;transition:transform 140ms var(--ease-out)}
+.pick img{width:100%;aspect-ratio:710/320;object-fit:cover;outline:3px solid transparent;outline-offset:3px;transition:outline-color 180ms ease}
+.pick:hover img{outline-color:var(--surface-2)}
+.pick.is-on img{outline-color:var(--brand)}
+.pick:active{transform:scale(.97)}
+.pick-cap{display:flex;justify-content:space-between;margin-top:8px;font-size:var(--step-small);color:var(--muted)}
+.pick-cap span:first-child{color:var(--ink);font-weight:600}
+.shutter{overflow:hidden}
+@media (prefers-reduced-motion:no-preference){
+  .js .shutter{clip-path:inset(0 0 100% 0);transition:clip-path 1100ms var(--ease-in-out)}
+  .js .shutter img{transform:scale(1.12);transition:transform 1500ms var(--ease-soft)}
+  .js .shutter.is-in{clip-path:inset(0)}
+  .js .shutter.is-in img{transform:none}
+  .js .shutter.swap img{transform:scale(1.06);opacity:.4;transition:none}
+}
 
-    /* Mobile Ripple Effect */
-    .ripple {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: var(--accent);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      animation: ripple-animation 0.6s ease-out forwards;
-      z-index: 10000;
-      opacity: 0.5;
-    }
+/* ---------- numbers ---------- */
+.numbers{padding-block:clamp(120px,14vw,200px)}
+.numbers-list{grid-column:2 / span 6}
+.numbers-list h2{font-size:var(--step-lead);font-weight:600;margin:0 0 40px 156px;line-height:1.15}
+.nrow{display:grid;grid-template-columns:132px 1fr;column-gap:24px;align-items:start;margin-bottom:30px}
+.nrow dt{text-align:right;font-size:var(--step-lead);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;line-height:1}
+.nrow dd{max-width:40ch}
+.numbers-media{grid-column:9 / span 4;margin-top:80px}
+.numbers-media video{width:100%;height:auto;background:var(--surface)}
+.numbers-media figcaption{margin-top:8px;font-size:var(--step-small);color:var(--muted)}
 
-    @keyframes ripple-animation {
-      to {
-        width: 150px;
-        height: 150px;
-        opacity: 0;
-      }
-    }
+/* ---------- kit gallery ---------- */
+.kit{padding-bottom:clamp(120px,14vw,200px)}
+.kit-head{align-items:end;margin-bottom:56px}
+.kit-head h2{grid-column:1 / span 6;font-size:var(--step-head);font-weight:400;letter-spacing:-0.025em;line-height:1}
+.kit-head p{grid-column:8 / span 5;font-size:var(--step-lead);line-height:1.3;max-width:32ch}
+.masonry{columns:4;column-gap:8px;padding-inline:var(--m)}
+.tile{break-inside:avoid;margin:0 0 18px}
+.tile-btn{display:block;width:100%;background:var(--surface);overflow:hidden}
+.tile-btn img,.tile-btn video{width:100%;height:auto;transition:transform 400ms var(--ease-soft)}
+.tile-btn:hover img,.tile-btn:hover video{transform:scale(1.03)}
+.tile figcaption{margin-top:7px;font-size:var(--step-small);color:var(--ink);line-height:1.35}
 
-    /* Media Query to restore default cursor on mobile */
-    @media (pointer: coarse) {
-      body { cursor: auto !important; }
-      .custom-cursor, #cursor-light { display: none !important; }
-      a, button, .btn, .tech-pill, .casino-division { cursor: pointer !important; }
-    }
+/* ---------- web and tools ---------- */
+.web{padding-bottom:clamp(120px,14vw,200px)}
+.web-col{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:start}
+.web-col h2{grid-column:3 / -1;font-size:var(--step-head);font-weight:400;letter-spacing:-0.025em;margin-bottom:48px;line-height:1}
+.web-col .g-sites{grid-column:3 / span 5}.web-col .g-tools{grid-column:8 / span 5}
+.g-tools .group + .group{margin-top:36px}
+.group + .group{margin-top:44px}
+.group-name{font-size:var(--step-body);color:var(--muted);margin-bottom:6px}
+.li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;min-height:40px;padding-block:7px;color:var(--ink);text-decoration:none}
+.li-l{display:flex;align-items:baseline;gap:10px}
+.dot{flex:0 0 14px;width:14px;height:14px;border-radius:50%;background:var(--dot,var(--ink));transform:translateY(2px)}
+.li-name{font-size:var(--step-body)}
+.li-v{font-size:var(--step-small);color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+a.li{transition:transform 160ms var(--ease-out)}
+a.li:hover{color:var(--ink);transform:translateX(6px)}
+a.li:hover .li-name{color:var(--accent)}
 
-    .navbar { background: transparent; padding: 20px 0; position: relative; z-index: 10; }
-    .navbar-brand { font-weight: 700; font-size: 1.5rem; }
-    .hero { height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; z-index: 1; }
-    .section-padding { padding: 80px 0; position: relative; z-index: 1; }
-    
-    .card-custom {
-      height: 100%; background: var(--card-dark); border: none; border-radius: 16px;
-      padding: 25px; transition: transform 0.3s ease; position: relative; z-index: 2;
-    }
-    body.light-mode .card-custom { background: var(--card-light); }
-    .card-custom:hover { transform: translateY(-5px); border: 1px solid var(--accent); }
-    
-    .casino-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
-    @media (max-width: 768px) { .casino-grid { grid-template-columns: repeat(2, 1fr); } }
+/* ---------- about ---------- */
+.about{background:var(--surface);padding-block:clamp(100px,11vw,160px)}
+.facts{grid-column:1 / span 2;font-size:var(--step-small);line-height:1.5;padding-top:.5em}
+.facts p + p{margin-top:14px}
+.facts span{display:block;color:var(--muted)}
+.bio{grid-column:3 / span 9}
+.bio .big{font-size:var(--step-lead);line-height:1.25;letter-spacing:-0.01em;max-width:34ch}
+.bio .rest{margin-top:28px;max-width:62ch}
 
-    .casino-division {
-      background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 12px;
-      text-align: center; transition: 0.3s; border: 1px solid transparent;
-      display: flex; align-items: center; justify-content: center; font-weight: 600;
-    }
-    .casino-division:hover { background: rgba(56, 189, 248, 0.1); border-color: var(--accent); color: var(--accent); transform: scale(1.05); }
+/* ---------- contact ---------- */
+.contact{background:var(--accent);color:#fff;min-height:80svh;padding:48px 0 64px;display:flex;flex-direction:column;overflow:hidden}
+.strip{display:flex;gap:8px;width:max-content;animation:drift 70s linear infinite}
+.strip img,.strip video{height:150px;width:auto;flex:0 0 auto}
+@keyframes drift{to{transform:translateX(-50%)}}
+.contact h2{font-size:var(--step-head);font-weight:400;letter-spacing:-0.025em;line-height:1;margin-top:72px}
+.cells{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:40px}
+.cell{min-height:96px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 16px;background:#3360e6;color:#fff;font-size:var(--step-body);overflow-wrap:anywhere;text-decoration:none;transition:background-color 180ms ease,transform 140ms var(--ease-out)}
+.cell:hover{background:#4b72ea;color:#fff}
+.cell:active{transform:scale(.98)}
+.cell.go{background:#fff;color:var(--accent);font-weight:600}
+.cell.go:hover{background:#eef2ff;color:var(--accent)}
+.cells-notes{margin-top:12px;font-size:var(--step-small)}
+.contact .wrap{margin-top:auto}
 
-    .btn-custom { background: var(--accent); color: #020617; font-weight: 600; border-radius: 8px; padding: 12px 28px; border: none; }
-    .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--accent); color: #020617; padding: 8px 16px; border-radius: 8px; font-weight: bold; }
-    
-    .footer { padding: 60px 0; text-align: center; position: relative; z-index: 1; }
-    .project-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+/* ---------- footer ---------- */
+.foot{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px;padding:8px}
+.t{background:var(--surface);padding:20px;display:flex;flex-direction:column;min-height:220px}
+.t1{grid-column:span 4}.t2{grid-column:span 3}.t3{grid-column:span 2}.t4{grid-column:span 3}
+.t1 p:first-child{font-size:var(--step-lead);line-height:1.2;max-width:22ch}
+.t1 .legal,.t3 .muted{margin-top:auto;font-size:var(--step-small);color:var(--muted)}
+.t2 a{color:var(--ink);text-decoration:none;display:block;padding:3px 0}
+.t2 a:hover{color:var(--accent)}
+.t3 .time{font-size:var(--step-lead);font-variant-numeric:tabular-nums}
+.t4 a{margin-top:auto;font-size:var(--step-body);color:var(--ink)}
+.t5{grid-column:span 8;background:var(--field);color:var(--field-ink);min-height:320px;align-items:center;justify-content:center}
+.t5{align-items:flex-start;justify-content:flex-end}
+.t5 span{font-size:var(--step-display);letter-spacing:-0.04em;line-height:.88}
+.t6{grid-column:span 4;background:var(--accent);color:#fff;min-height:320px;text-decoration:none;transition:background-color 180ms ease}
+.t6:hover{background:var(--accent-2);color:#fff}
+.t6 span{font-size:var(--step-lead);line-height:1.1}
+.t6 svg{margin-top:auto;align-self:flex-end;transition:transform 220ms var(--ease-out)}
+.t6:hover svg{transform:translate(6px,-6px)}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    .tool-card { text-align: center; padding: 15px; }
-    .tool-card i { font-size: 5.5rem; display: block; filter: grayscale(1) opacity(0.6); transition: 0.4s; }
-    .tool-card:hover i { filter: grayscale(0) opacity(1); animation: float 2s ease-in-out infinite; }
-    
-.tool-card:hover .si-canva { color: #00C4CC; }
-    .tool-card:hover .si-xero { color: #13B5EA; }
-    .tool-card:hover .si-figma { color: #F24E1E; }
-    .tool-card:hover .si-shopify { color: #95BF47; }
-    .tool-card:hover .si-wix { color: #FFFFFF; }
-    body.light-mode .tool-card:hover .si-wix { color: #000000; }
-    .tool-card:hover .si-flutter { color: #02569B; }
+/* ---------- lightbox ---------- */
+dialog.lb{border:0;padding:0;max-width:none;max-height:none;width:100vw;height:100dvh;background:rgba(17,17,17,.94);color:#fff}
+dialog.lb[open]{display:grid;grid-template-rows:1fr auto}
+dialog.lb::backdrop{background:rgba(17,17,17,.94)}
+.lb-stage{display:flex;align-items:center;justify-content:center;padding:56px 20px 12px;min-height:0}
+.lb-stage img{max-width:min(100%,1400px);max-height:100%;width:auto;height:auto;object-fit:contain}
+.lb-bar{display:flex;align-items:center;gap:8px;padding:12px 20px 20px}
+.lb-cap{flex:1;font-size:var(--step-body)}
+.lb-btn{min-height:48px;min-width:48px;padding:0 16px;background:#2a2a2a;color:#fff;transition:background-color 160ms ease}
+.lb-btn:hover{background:#3a3a3a}
+.lb-close{position:absolute;top:8px;right:8px}
+@media (prefers-reduced-motion:no-preference){
+  dialog.lb[open] .lb-stage img{animation:lbin 320ms var(--ease-out)}
+  @keyframes lbin{from{opacity:0;transform:scale(.96)}}
+}
 
+/* ---------- entrances ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease-out),transform 800ms var(--ease-out);transition-delay:var(--d,0ms)}
+  .js .rv.is-in{opacity:1;transform:none}
+  .js .fr.rv{transform:translateY(14px) scale(.98)}
+  .js .fr.rv.is-in{transform:none}
+  .js .nrow dt.rv{transform:translateY(32px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .strip{animation:none}
+  html{scroll-behavior:auto}
+}
 
-
-
-
-body.dark-mode .navbar-brand { color: #e2e8f0; }
-    body.light-mode .navbar-brand { color: #1e293b; }
-
-    .tech-pill {
-      background: rgba(56, 189, 248, 0.1); color: var(--accent);
-      border-radius: 8px; padding: 10px 15px; transition: 0.3s;
-    }
-    .tech-pill:hover { background: var(--accent); color: #020617; transform: scale(1.05); }
-
-    /* Design work */
-    .eyebrow { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-    .case-psr { display: grid; gap: 12px; margin: 0; }
-    .case-psr dt { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; opacity: .65; font-weight: 600; }
-    .case-psr dd { margin: 0 0 6px; }
-    .pair-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media (max-width: 576px) { .pair-imgs { grid-template-columns: 1fr; } }
-    .shot { position: relative; display: block; border-radius: 12px; overflow: hidden; }
-    .shot img { width: 100%; height: auto; display: block; transition: transform .35s ease; }
-    .shot:hover img { transform: scale(1.02); }
-    .shot .tag { position: absolute; left: 10px; top: 10px; font-size: .72rem; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: rgba(2, 6, 23, .78); color: #fff; }
-    .pair-title { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-    .pair-title span { font-size: .85rem; opacity: .65; }
-    .format-chip { display: inline-block; font-size: .78rem; padding: 4px 9px; border-radius: 6px; background: rgba(56, 189, 248, 0.1); color: var(--accent); margin: 0 6px 6px 0; }
-    figure.design-fig { margin: 0; }
-    figure.design-fig figcaption { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; margin-top: 8px; }
-    figure.design-fig figcaption span:last-child { opacity: .65; }
-    @media (prefers-reduced-motion: reduce) { .shot img { transition: none; } .shot:hover img { transform: none; } }
-  </style>
+/* ---------- tablet ---------- */
+@media (max-width:1100px){
+  .band > div:nth-child(1){grid-column:span 4}.band > div:nth-child(2){grid-column:span 8}
+  .band > div:nth-child(3){grid-column:span 6;margin-top:14px}.band > div:nth-child(4){grid-column:span 6;margin-top:14px}
+  .display{grid-column:1 / -1}.hero-sub{grid-column:1 / span 8;margin-top:18px}
+  .same-aside{grid-column:1 / -1;margin-bottom:28px}.same-aside .note{margin-top:14px}
+  .same-main{grid-column:1 / -1}
+  .numbers-list{grid-column:1 / span 7}.numbers-media{grid-column:8 / span 5}
+  .masonry{columns:3}
+  .web-col h2,.web-col .g-sites,.web-col .g-tools{grid-column:1 / -1}.web-col .g-tools{margin-top:44px}
+  .facts{grid-column:1 / -1;display:flex;gap:28px;margin-top:32px;order:2}.facts p + p{margin-top:0}
+  .bio{grid-column:1 / -1;order:1}
+  .t1{grid-column:span 6}.t2{grid-column:span 6}.t3{grid-column:span 6}.t4{grid-column:span 6}
+  .t5{grid-column:span 12}.t6{grid-column:span 12;min-height:200px}
+}
+/* ---------- phone ---------- */
+@media (max-width:640px){
+  :root{--m:16px;--gap:12px;--row:58px}
+  .band > div{grid-column:1 / -1!important;margin-top:0!important}
+  .band{row-gap:14px}
+  .band > div:nth-child(1){display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .band > div:nth-child(3){display:none}
+  .band .reach{flex-direction:row;align-items:center;justify-content:space-between}
+  .hero-head{padding-top:36px;padding-bottom:20px}
+  .display{font-size:clamp(3rem,13.2vw,4.25rem);line-height:.95}
+  .hero-sub{grid-column:1 / -1;margin-top:14px}
+  .sheet{gap:6px}
+  .run-title{width:100%;height:auto;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:2px 10px;padding:9px 11px;margin-top:10px}
+  .run:first-child .run-title{margin-top:0}
+  .run-desc{margin-top:0;flex-basis:100%}
+  .picks{grid-template-columns:repeat(2,1fr)}
+  .numbers-list{grid-column:1 / -1}
+  .numbers-list h2{margin-left:112px}
+  .nrow{grid-template-columns:88px 1fr;column-gap:24px}
+  .numbers-media{grid-column:1 / -1;margin-top:28px;width:78%;justify-self:end}
+  .kit-head h2,.kit-head p{grid-column:1 / -1}.kit-head p{margin-top:16px}
+  .masonry{columns:2;column-gap:6px}
+  .li{min-height:44px}
+  .facts{flex-wrap:wrap;gap:16px 24px}
+  .strip img,.strip video{height:110px}
+  .contact h2{margin-top:48px}
+  .cells{grid-template-columns:1fr}
+  .cell{min-height:60px}
+  .foot{grid-template-columns:repeat(2,1fr);gap:6px;padding:6px}
+  .t5{grid-column:1 / -1;order:2;min-height:160px}.t6{grid-column:1 / -1;order:1;min-height:160px}
+  .t2,.t4{grid-column:span 1}.t3,.t1{grid-column:span 1}
+  .t{min-height:180px}
+  .lb-bar{flex-wrap:wrap}.lb-cap{flex-basis:100%;order:-1}
+}
+</style>
 </head>
-<body class="dark-mode">
+<body id="top">
 
-<div id="cursor-light"></div>
-<div class="custom-cursor"></div>
-<div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+<header class="band grid wrap">
+  <div><a class="wordmark" href="#top">Patrick Sandoval</a><span class="role">Promo designer, Canva + AI</span></div>
+  <div><nav class="nav" aria-label="Sections"><a href="#kits">Brand kits</a><a href="#kit">One kit</a><a href="#web">Web</a><a href="#about">About</a></nav></div>
+  <div class="where">Quezon City, Philippines<span>Remote, open to freelance and full-time work</span></div>
+  <div class="reach"><a class="mail" href="mailto:patrickangelosandoval@gmail.com">patrickangelosandoval@gmail.com</a><a class="btn" href="mailto:patrickangelosandoval@gmail.com?subject=Promo%20kit%20enquiry&amp;body=Hi%20Patrick%2C%0A%0ABrand%3A%20%0AWhat%20we%20need%3A%20%0ADeadline%3A%20">Email me</a></div>
+</header>
 
-<nav class="navbar">
-  <div class="container text-center"><a class="navbar-brand mx-0" href="#">Patrick Sandoval</a></div>
-</nav>
+<main>
+<section class="hero-head grid wrap" aria-labelledby="h1">
+  <h1 class="display rv" id="h1">Promo kits for 10 brands</h1>
+  <p class="hero-sub rv" style="--d:120ms">Logo sets, promo cards, pop-ups, banners and phone guides, written in Brazilian Portuguese and made in Canva with AI tools.</p>
+</section>
 
-<section class="hero">
-  <div class="container">
-    <h1 class="display-4 fw-bold">Promo Design and Web Systems for Online Brands</h1>
-    <p class="lead mt-3">Graphic Design (Canva + AI) • Websites • Automation</p>
-    <a href="#design" class="btn btn-custom mt-4">See My Design Work</a>
+<section class="sheet" id="kits" aria-label="Brand kits, a few frames from each">
+<div class="run" id="kit-123rio" style="--brand:#024e46"><div class="run-title"><span class="run-name">123Rio</span><span class="run-meta">70 files</span><span class="run-desc">Carnival mascots on cream and teal.</span></div><div class="run-frames"><button class="fr" type="button" data-n="0" style="--r:1.0000"><img src="img/work/t/i007.webp" width="240" height="240" alt="123Rio, app icon, 1024×1024" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="1" style="--r:3.4000"><img src="img/work/t/i025.webp" width="816" height="240" alt="123Rio, carousel banner, animated, 1020×300" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="2" style="--r:2.2167"><img src="img/work/t/i010.webp" width="532" height="240" alt="123Rio, promo-list card, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="3" style="--r:2.2167"><img src="img/work/t/i013.webp" width="532" height="240" alt="123Rio, promo-list card, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="4" style="--r:2.2167"><img src="img/work/t/i009.webp" width="532" height="240" alt="123Rio, promo-list card, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="5" style="--r:1.2792"><img src="img/work/t/i018.webp" width="307" height="240" alt="123Rio, pop-up, animated, 920×720" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="6" style="--r:1.4458"><img src="img/work/t/i028.webp" width="347" height="240" alt="123Rio, phone guide, 1440×996" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="7" style="--r:1.7792"><img src="img/work/t/i032.webp" width="427" height="240" alt="123Rio, share card, animated, 1280×720" loading="eager" decoding="async"></button></div></div>
+<div class="run" id="kit-567rio" style="--brand:#0d6b37"><div class="run-title"><span class="run-name">567Rio</span><span class="run-meta">70 files</span><span class="run-desc">Brazil-jersey mascots, green and gold.</span></div><div class="run-frames"><button class="fr" type="button" data-n="8" style="--r:1.0000"><img src="img/work/t/i048.webp" width="240" height="240" alt="567Rio, app icon, 1024×1024" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="9" style="--r:3.4000"><img src="img/work/t/i053.webp" width="816" height="240" alt="567Rio, carousel banner, animated, 1020×300" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="10" style="--r:2.2167"><img src="img/work/t/i050.webp" width="532" height="240" alt="567Rio, promo-list card, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="11" style="--r:2.2167"><img src="img/work/t/i051.webp" width="532" height="240" alt="567Rio, promo-list card, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="12" style="--r:2.2167"><img src="img/work/t/i049.webp" width="532" height="240" alt="567Rio, promo-list card, animated, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="13" style="--r:1.2792"><img src="img/work/t/i052.webp" width="307" height="240" alt="567Rio, pop-up, animated, 920×720" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="14" style="--r:1.4458"><img src="img/work/t/i054.webp" width="347" height="240" alt="567Rio, phone guide, 1440×996" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="15" style="--r:1.7792"><img src="img/work/t/i055.webp" width="427" height="240" alt="567Rio, share card, animated, 1280×720" loading="eager" decoding="async"></button></div></div>
+<div class="run" id="kit-11rio" style="--brand:#1d7c80"><div class="run-title"><span class="run-name">11Rio</span><span class="run-meta">68 files</span><span class="run-desc">Jewelled characters on teal.</span></div><div class="run-frames"><button class="fr" type="button" data-n="16" style="--r:1.0000"><img src="img/work/t/i000.webp" width="240" height="240" alt="11Rio, app icon, 1024×1024" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="17" style="--r:3.4000"><img src="img/work/t/i005.webp" width="816" height="240" alt="11Rio, carousel banner, animated, 1020×300" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="18" style="--r:2.2167"><img src="img/work/t/i001.webp" width="532" height="240" alt="11Rio, promo-list card, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="19" style="--r:2.2167"><img src="img/work/t/i002.webp" width="532" height="240" alt="11Rio, promo-list card, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="20" style="--r:2.2167"><img src="img/work/t/i003.webp" width="532" height="240" alt="11Rio, promo-list card, animated, 710×320" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="21" style="--r:1.2792"><img src="img/work/t/i004.webp" width="307" height="240" alt="11Rio, pop-up, animated, 920×720" loading="eager" decoding="async"></button><button class="fr" type="button" data-n="22" style="--r:1.4458"><img src="img/work/t/i006.webp" width="347" height="240" alt="11Rio, phone guide, 1440×996" loading="eager" decoding="async"></button></div></div>
+<div class="run" id="kit-7facom" style="--brand:#1b2a86"><div class="run-title"><span class="run-name">7FA.com</span><span class="run-meta">84 files</span><span class="run-desc">Neon cyber suits on navy.</span></div><div class="run-frames"><button class="fr" type="button" data-n="23" style="--r:1.0000"><img src="img/work/t/i056.webp" width="240" height="240" alt="7FA.com, app icon, 1024×1024" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="24" style="--r:3.4000"><img src="img/work/t/i060.webp" width="816" height="240" alt="7FA.com, carousel banner, 1020×300" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="25" style="--r:2.2167"><img src="img/work/t/i059.webp" width="532" height="240" alt="7FA.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="26" style="--r:2.2167"><img src="img/work/t/i057.webp" width="532" height="240" alt="7FA.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="27" style="--r:2.2167"><img src="img/work/t/i058.webp" width="532" height="240" alt="7FA.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="28" style="--r:1.2792"><img src="img/work/t/i062.webp" width="307" height="240" alt="7FA.com, pop-up, animated, 920×720" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="29" style="--r:1.4458"><img src="img/work/t/i063.webp" width="347" height="240" alt="7FA.com, phone guide, animated, 1440×996" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="30" style="--r:0.4625"><img src="img/work/t/i061.webp" width="111" height="240" alt="7FA.com, splash screen, 1125×2436" loading="lazy" decoding="async"></button></div></div>
+<div class="run" id="kit-a66bet" style="--brand:#1f3566"><div class="run-title"><span class="run-name">A66BET</span><span class="run-meta">85 files</span><span class="run-desc">Leather-jacket animals, navy and gold.</span></div><div class="run-frames"><button class="fr" type="button" data-n="31" style="--r:1.0000"><img src="img/work/t/i079.webp" width="240" height="240" alt="A66BET, app icon, 1024×1024" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="32" style="--r:5.0000"><img src="img/work/t/i084.webp" width="1200" height="240" alt="A66BET, banner, 1500×300" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="33" style="--r:3.4000"><img src="img/work/t/i082.webp" width="816" height="240" alt="A66BET, carousel banner, animated, 1020×300" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="34" style="--r:2.2167"><img src="img/work/t/i080.webp" width="532" height="240" alt="A66BET, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="35" style="--r:2.2167"><img src="img/work/t/i081.webp" width="532" height="240" alt="A66BET, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="36" style="--r:1.2792"><img src="img/work/t/i083.webp" width="307" height="240" alt="A66BET, pop-up, animated, 920×720" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="37" style="--r:1.4458"><img src="img/work/t/i085.webp" width="347" height="240" alt="A66BET, phone guide, animated, 1440×996" loading="lazy" decoding="async"></button></div></div>
+<div class="run" id="kit-bb8bet" style="--brand:#1666d6"><div class="run-title"><span class="run-name">bb8bet</span><span class="run-meta">77 files</span><span class="run-desc">Sky blue, toy-like 3D characters.</span></div><div class="run-frames"><button class="fr" type="button" data-n="38" style="--r:1.0000"><img src="img/work/t/i086.webp" width="240" height="240" alt="bb8bet, app icon, 1024×1024" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="39" style="--r:3.4000"><img src="img/work/t/i090.webp" width="816" height="240" alt="bb8bet, carousel banner, animated, 1020×300" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="40" style="--r:2.2167"><img src="img/work/t/i087.webp" width="532" height="240" alt="bb8bet, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="41" style="--r:2.2167"><img src="img/work/t/i088.webp" width="532" height="240" alt="bb8bet, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="42" style="--r:2.2167"><img src="img/work/t/i089.webp" width="532" height="240" alt="bb8bet, promo-list card, animated, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="43" style="--r:1.2792"><img src="img/work/t/i091.webp" width="307" height="240" alt="bb8bet, pop-up, animated, 920×720" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="44" style="--r:1.4458"><img src="img/work/t/i092.webp" width="347" height="240" alt="bb8bet, phone guide, animated, 1440×996" loading="lazy" decoding="async"></button></div></div>
+<div class="run" id="kit-4bbet" style="--brand:#0b2a4a"><div class="run-title"><span class="run-name">4bbet</span><span class="run-meta">64 files</span><span class="run-desc">Icy blue, celestial characters.</span></div><div class="run-frames"><button class="fr" type="button" data-n="45" style="--r:1.0000"><img src="img/work/t/i041.webp" width="240" height="240" alt="4bbet, app icon, 1024×1024" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="46" style="--r:3.4000"><img src="img/work/t/i047.webp" width="816" height="240" alt="4bbet, carousel banner, 1020×300" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="47" style="--r:2.2167"><img src="img/work/t/i043.webp" width="532" height="240" alt="4bbet, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="48" style="--r:2.2167"><img src="img/work/t/i044.webp" width="532" height="240" alt="4bbet, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="49" style="--r:2.2167"><img src="img/work/t/i045.webp" width="532" height="240" alt="4bbet, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="50" style="--r:1.2792"><img src="img/work/t/i046.webp" width="307" height="240" alt="4bbet, pop-up, animated, 920×720" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="51" style="--r:0.4625"><img src="img/work/t/i042.webp" width="111" height="240" alt="4bbet, splash screen, 1125×2436" loading="lazy" decoding="async"></button></div></div>
+<div class="run" id="kit-83llcom" style="--brand:#14183a"><div class="run-title"><span class="run-name">83ll.com</span><span class="run-meta">67 files</span><span class="run-desc">Tuxedos and ice on midnight blue.</span></div><div class="run-frames"><button class="fr" type="button" data-n="52" style="--r:1.0000"><img src="img/work/t/i064.webp" width="240" height="240" alt="83ll.com, app icon, 1024×1024" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="53" style="--r:3.4000"><img src="img/work/t/i068.webp" width="816" height="240" alt="83ll.com, carousel banner, animated, 1020×300" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="54" style="--r:2.2167"><img src="img/work/t/i066.webp" width="532" height="240" alt="83ll.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="55" style="--r:2.2167"><img src="img/work/t/i065.webp" width="532" height="240" alt="83ll.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="56" style="--r:2.2167"><img src="img/work/t/i067.webp" width="532" height="240" alt="83ll.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="57" style="--r:1.2792"><img src="img/work/t/i069.webp" width="307" height="240" alt="83ll.com, pop-up, animated, 920×720" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="58" style="--r:1.4458"><img src="img/work/t/i070.webp" width="347" height="240" alt="83ll.com, phone guide, animated, 1440×996" loading="lazy" decoding="async"></button></div></div>
+<div class="run" id="kit-365xvcom" style="--brand:#2f7a2c"><div class="run-title"><span class="run-name">365xv.com</span><span class="run-meta">82 files</span><span class="run-desc">All-green suits and lucky charms.</span></div><div class="run-frames"><button class="fr" type="button" data-n="59" style="--r:1.0000"><img src="img/work/t/i034.webp" width="240" height="240" alt="365xv.com, app icon, 1024×1024" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="60" style="--r:3.4000"><img src="img/work/t/i038.webp" width="816" height="240" alt="365xv.com, carousel banner, 1020×300" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="61" style="--r:2.2167"><img src="img/work/t/i036.webp" width="532" height="240" alt="365xv.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="62" style="--r:2.2167"><img src="img/work/t/i035.webp" width="532" height="240" alt="365xv.com, promo-list card, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="63" style="--r:2.2167"><img src="img/work/t/i037.webp" width="532" height="240" alt="365xv.com, promo-list card, animated, 710×320" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="64" style="--r:1.2792"><img src="img/work/t/i040.webp" width="307" height="240" alt="365xv.com, pop-up, animated, 920×720" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="65" style="--r:1.4458"><img src="img/work/t/i039.webp" width="347" height="240" alt="365xv.com, phone guide, animated, 1440×996" loading="lazy" decoding="async"></button></div></div>
+<div class="run" id="kit-kkkrio" style="--brand:#178a12"><div class="run-title"><span class="run-name">KKKRIO</span><span class="run-meta">65 files</span><span class="run-desc">Lime green with gold coins.</span></div><div class="run-frames"><button class="fr" type="button" data-n="66" style="--r:1.0000"><img src="img/work/t/i077.webp" width="240" height="240" alt="KKKRIO, app icon, 1024×1024" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="67" style="--r:3.4125"><img src="img/work/t/i071.webp" width="819" height="240" alt="KKKRIO, carousel banner, 1280×375" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="68" style="--r:3.4125"><img src="img/work/t/i072.webp" width="819" height="240" alt="KKKRIO, carousel banner, 1280×375" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="69" style="--r:2.2222"><img src="img/work/t/i073.webp" width="520" height="234" alt="KKKRIO, promo-list card, 520×234" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="70" style="--r:2.2222"><img src="img/work/t/i074.webp" width="520" height="234" alt="KKKRIO, promo-list card, 520×234" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="71" style="--r:2.2222"><img src="img/work/t/i075.webp" width="520" height="234" alt="KKKRIO, promo-list card, 520×234" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="72" style="--r:1.2708"><img src="img/work/t/i076.webp" width="305" height="240" alt="KKKRIO, floating pop-up, 798×627" loading="lazy" decoding="async"></button><button class="fr" type="button" data-n="73" style="--r:1.4458"><img src="img/work/t/i078.webp" width="347" height="240" alt="KKKRIO, phone guide, animated, 1440×996" loading="lazy" decoding="async"></button></div></div>
+</section>
+<p class="wrap sheet-note">A few frames from each kit. Select any frame to see it full size.</p>
+
+<section class="same grid wrap" id="same" aria-labelledby="same-h">
+  <div class="same-aside">
+    <h2 id="same-h" class="rv">Same promo, nine brands</h2>
+    <p class="intro rv" style="--d:80ms">The first top-up offer, “Primeira recarga, ganhe até R$ 1000”, exists in every kit. Pick a brand to see its version.</p>
+    <p class="note rv" style="--d:160ms">The copy and the layout grid stay. The mascot, colours, type treatment and logo change with each brand.</p>
+  </div>
+  <div class="same-main">
+    <figure>
+      <div class="lift shutter" id="lift"><img id="lift-img" src="img/work/f/i010.webp" width="710" height="320" alt="123Rio promo-list card: Primeira recarga, ganhe até R$ 1000"></div>
+      <figcaption class="lift-cap"><span aria-live="polite"><b id="lift-brand">123Rio</b>, promo-list card</span><span>710×320</span></figcaption>
+    </figure>
+    <ul class="picks" aria-label="Choose a brand"><li><button class="pick is-on" type="button" aria-pressed="true" data-src="img/work/f/i010.webp" data-brand="123Rio" style="--brand:#024e46"><img src="img/work/t/i010.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>123Rio</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i050.webp" data-brand="567Rio" style="--brand:#0d6b37"><img src="img/work/t/i050.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>567Rio</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i001.webp" data-brand="11Rio" style="--brand:#1d7c80"><img src="img/work/t/i001.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>11Rio</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i059.webp" data-brand="7FA.com" style="--brand:#1b2a86"><img src="img/work/t/i059.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>7FA.com</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i080.webp" data-brand="A66BET" style="--brand:#1f3566"><img src="img/work/t/i080.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>A66BET</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i087.webp" data-brand="bb8bet" style="--brand:#1666d6"><img src="img/work/t/i087.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>bb8bet</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i043.webp" data-brand="4bbet" style="--brand:#0b2a4a"><img src="img/work/t/i043.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>4bbet</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i066.webp" data-brand="83ll.com" style="--brand:#14183a"><img src="img/work/t/i066.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>83ll.com</span><span>710×320</span></span></button></li><li><button class="pick" type="button" aria-pressed="false" data-src="img/work/f/i036.webp" data-brand="365xv.com" style="--brand:#2f7a2c"><img src="img/work/t/i036.webp" width="532" height="240" alt="" loading="lazy"><span class="pick-cap"><span>365xv.com</span><span>710×320</span></span></button></li></ul>
   </div>
 </section>
 
-<section class="section-padding">
-  <div class="container">
-    <h2 class="mb-4">Tech Stack & Tools</h2>
-    <div class="row g-3 mb-5">
-      <div class="col-md-4"><div class="tech-pill">Java & SQL Backend</div></div>
-      <div class="col-md-4"><div class="tech-pill">Frontend (HTML/CSS/JS)</div></div>
-      <div class="col-md-4"><div class="tech-pill">Automation (Zapier/AHK)</div></div>
+<section class="numbers grid wrap" aria-labelledby="num-h">
+  <div class="numbers-list">
+    <h2 id="num-h" class="rv">The work, counted</h2>
+    <dl>
+      <div class="nrow"><dt class="rv">10</dt><dd class="rv" style="--d:70ms">brand kits, each with its own colours, mascots, type and logo lockup.</dd></div>
+      <div class="nrow"><dt class="rv">730+</dt><dd class="rv" style="--d:70ms">finished files across those kits, all of the copy in Brazilian Portuguese.</dd></div>
+      <div class="nrow"><dt class="rv">220</dt><dd class="rv" style="--d:70ms">of them animated: banners, pop-ups and phone guides that move.</dd></div>
+      <div class="nrow"><dt class="rv">9</dt><dd class="rv" style="--d:70ms">formats in every kit, from a 100px tile to a 1440px phone guide.</dd></div>
+    </dl>
+  </div>
+  <figure class="numbers-media rv" style="--d:200ms">
+    <video src="img/work/v/v5.mp4" poster="img/work/v/v5.webp" width="1280" height="886" muted loop playsinline autoplay preload="none" aria-label="7FA.com phone guide, animated"></video>
+    <figcaption>7FA.com, animated phone guide, 1440×996</figcaption>
+  </figure>
+</section>
+
+<section class="kit" id="kit" aria-labelledby="kit-h">
+  <div class="kit-head grid wrap">
+    <h2 id="kit-h" class="rv">One kit, every format</h2>
+    <p class="rv" style="--d:90ms">Every brand gets the full kit. This is 123Rio’s: promo cards, pop-ups, ads, carousels, phone guides, share cards and its app icon.</p>
+  </div>
+  <div class="masonry">
+<figure class="tile"><button class="tile-btn" type="button" data-n="74"><img src="img/work/f/i025.webp" width="1020" height="300" alt="123Rio, carousel, 1020×300" loading="lazy" decoding="async"></button><figcaption>Os membros VIP, carousel</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="75"><video src="img/work/v/v0.mp4" poster="img/work/v/v0.webp" width="1020" height="300" muted loop playsinline autoplay preload="none" aria-label="123Rio, carousel, 1020×300, animated"></video></button><figcaption>Convide alguém, carousel</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="76"><video src="img/work/v/v2.mp4" poster="img/work/v/v2.webp" width="920" height="720" muted loop playsinline autoplay preload="none" aria-label="123Rio, pop-up, 920×720, animated"></video></button><figcaption>Bônus de 100%, pop-up</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="77"><img src="img/work/f/i012.webp" width="710" height="320" alt="123Rio, promo card, 710×320" loading="lazy" decoding="async"></button><figcaption>Os membros VIP, promo card</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="78"><img src="img/work/f/i028.webp" width="1440" height="996" alt="123Rio, phone guide, 1440×996" loading="lazy" decoding="async"></button><figcaption>Missões, phone guide</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="79"><img src="img/work/f/i016.webp" width="920" height="720" alt="123Rio, pop-up, 920×720" loading="lazy" decoding="async"></button><figcaption>Convide 1 pessoa, pop-up</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="80"><img src="img/work/f/i014.webp" width="710" height="320" alt="123Rio, promo card, 710×320" loading="lazy" decoding="async"></button><figcaption>Primeiro depósito, promo card</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="81"><video src="img/work/v/v1.mp4" poster="img/work/v/v1.webp" width="1440" height="385" muted loop playsinline autoplay preload="none" aria-label="123Rio, channel banner, 1440×385, animated"></video></button><figcaption>Junte-se Telegram, channel banner</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="82"><img src="img/work/f/i020.webp" width="920" height="720" alt="123Rio, ad, 920×720" loading="lazy" decoding="async"></button><figcaption>Os membros VIP, ad</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="83"><img src="img/work/f/i008.webp" width="710" height="320" alt="123Rio, promo card, 710×320" loading="lazy" decoding="async"></button><figcaption>Ofertas triplas, promo card</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="84"><img src="img/work/f/i021.webp" width="920" height="720" alt="123Rio, ad with QR, 920×720" loading="lazy" decoding="async"></button><figcaption>Baixe o app, ad with QR</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="85"><img src="img/work/f/i023.webp" width="1020" height="300" alt="123Rio, carousel, 1020×300" loading="lazy" decoding="async"></button><figcaption>12 vezes ao dia, carousel</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="86"><img src="img/work/f/i007.webp" width="1024" height="1024" alt="123Rio, App icon, 1024×1024" loading="lazy" decoding="async"></button><figcaption>App icon</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="87"><video src="img/work/v/v3.mp4" poster="img/work/v/v3.webp" width="710" height="320" muted loop playsinline autoplay preload="none" aria-label="123Rio, promo card, 710×320, animated"></video></button><figcaption>Bônus grátis, promo card</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="88"><img src="img/work/f/i017.webp" width="920" height="720" alt="123Rio, pop-up, 920×720" loading="lazy" decoding="async"></button><figcaption>Convide seus amigos, pop-up</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="89"><img src="img/work/f/i032.webp" width="1280" height="720" alt="123Rio, share card, 1280×720" loading="lazy" decoding="async"></button><figcaption>Convide alguém, share card</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="90"><img src="img/work/f/i011.webp" width="710" height="320" alt="123Rio, promo card, 710×320" loading="lazy" decoding="async"></button><figcaption>Use o código, promo card</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="91"><img src="img/work/f/i029.webp" width="1440" height="996" alt="123Rio, phone guide, 1440×996" loading="lazy" decoding="async"></button><figcaption>Telegram gift code, phone guide</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="92"><img src="img/work/f/i022.webp" width="920" height="720" alt="123Rio, ad, 920×720" loading="lazy" decoding="async"></button><figcaption>Fundo de previdência, ad</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="93"><img src="img/work/f/i026.webp" width="1020" height="300" alt="123Rio, carousel, 1020×300" loading="lazy" decoding="async"></button><figcaption>Parcerias, carousel</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="94"><img src="img/work/f/i031.webp" width="1440" height="385" alt="123Rio, channel banner, 1440×385" loading="lazy" decoding="async"></button><figcaption>Junte-se WhatsApp, channel banner</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="95"><img src="img/work/f/i033.webp" width="960" height="224" alt="123Rio, share banner, 960×224" loading="lazy" decoding="async"></button><figcaption>Convide uma pessoa, share banner</figcaption></figure>
+<figure class="tile"><button class="tile-btn" type="button" data-n="96"><img src="img/work/f/i019.webp" width="920" height="720" alt="123Rio, ad, 920×720" loading="lazy" decoding="async"></button><figcaption>12 vezes ao dia, ad</figcaption></figure>
+  </div>
+</section>
+
+<section class="web wrap" id="web" aria-labelledby="web-h">
+  <div class="web-col">
+    <h2 id="web-h" class="rv">Websites and tools</h2>
+    <div class="g-sites"><div class="group rv">
+      <p class="group-name">Websites and web apps</p>
+      <ul>
+        <li><a class="li" href="https://kaizenpath.org.au/" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#c0392b"></span><span class="li-name">Kaizen Path, men’s wellbeing non-profit</span></span><span class="li-v">kaizenpath.org.au</span></a></li>
+        <li><a class="li" href="https://poppy-thread-67721289.figma.site/" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#7a8a99"></span><span class="li-name">MEDIX, UI concept for a clinic system</span></span><span class="li-v">figma.site</span></a></li>
+        <li><a class="li" href="https://777-full.com" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#d4a017"></span><span class="li-name">777-Full</span></span><span class="li-v">777-full.com</span></a></li>
+        <li><a class="li" href="https://www.betbbrok.com" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#1a4be0"></span><span class="li-name">BetBbr</span></span><span class="li-v">betbbrok.com</span></a></li>
+        <li><a class="li" href="https://365xv.vip" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#2f7a2c"></span><span class="li-name">365XV</span></span><span class="li-v">365xv.vip</span></a></li>
+        <li><a class="li" href="https://a66bet.win" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#1f3566"></span><span class="li-name">A66Bet</span></span><span class="li-v">a66bet.win</span></a></li>
+      </ul>
+    </div></div>
+    <div class="g-tools"><div class="group rv">
+      <p class="group-name">Design</p>
+      <ul>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#00c4cc"></span><span class="li-name">Canva</span></span><span class="li-v">every promo kit</span></li>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#111"></span><span class="li-name">AI image tools</span></span><span class="li-v">characters and scenes</span></li>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#f24e1e"></span><span class="li-name">Figma</span></span><span class="li-v">UI layouts</span></li>
+      </ul>
     </div>
-    <div class="row g-4 text-center">
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-canva"></i></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-xero"></i></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-figma"></i></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-shopify"></i></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-wix"></i></div></div>
-      <div class="col-4 col-md-2"><div class="tool-card"><i class="si si-flutter"></i></div></div>
+    <div class="group rv">
+      <p class="group-name">Build</p>
+      <ul>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#111"></span><span class="li-name">Claude Code</span></span><span class="li-v">sites, tools, a Godot game</span></li>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#e44d26"></span><span class="li-name">HTML, CSS, JavaScript</span></span><span class="li-v">front end</span></li>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#5382a1"></span><span class="li-name">Java and SQL</span></span><span class="li-v">back end</span></li>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#95bf47"></span><span class="li-name">Wix, Shopify</span></span><span class="li-v">site and store builders</span></li>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#02569b"></span><span class="li-name">Flutter</span></span><span class="li-v">mobile UI</span></li>
+      </ul>
+    </div>
+    <div class="group rv">
+      <p class="group-name">Automation and admin</p>
+      <ul>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#ff4f00"></span><span class="li-name">Zapier, AutoHotkey</span></span><span class="li-v">workflows</span></li>
+        <li class="li"><span class="li-l"><span class="dot" style="--dot:#13b5ea"></span><span class="li-name">Xero</span></span><span class="li-v">bookkeeping</span></li>
+      </ul>
+    </div></div>
+  </div>
+</section>
+
+<section class="about grid wrap" id="about" aria-label="About">
+  <div class="facts rv">
+    <p>Quezon City<span>Philippines, UTC+8</span></p>
+    <p>Remote<span>Freelance or full-time</span></p>
+    <p><a href="https://github.com/frxstph" target="_blank" rel="noopener">GitHub</a><span><a href="https://linkedin.com/in/patrick-sandoval-8133aa132" target="_blank" rel="noopener">LinkedIn</a></span></p>
+  </div>
+  <div class="bio">
+    <p class="big rv" style="--d:80ms">I’m a self-taught designer. I make promo kits that hold together at every size, and I build the sites they run on.</p>
+    <p class="rest rv" style="--d:160ms">I design in Canva with AI image tools and write the copy in Brazilian Portuguese. With Claude Code I build websites, small tools and my own game in Godot. I’m also studying IT at STI College Malolos.</p>
+  </div>
+</section>
+</main>
+
+<section class="contact" aria-labelledby="contact-h">
+  <div class="strip" aria-hidden="true"><img src="img/work/t/i010.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i018.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i050.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i052.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i001.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i004.webp" width="307" height="240" alt="" loading="lazy"><video src="img/work/v/v4.mp4" poster="img/work/v/v4.webp" width="1020" height="300" muted loop playsinline autoplay preload="none" aria-hidden="true"></video><img src="img/work/t/i059.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i062.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i082.webp" width="816" height="240" alt="" loading="lazy"><img src="img/work/t/i083.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i087.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i091.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i043.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i046.webp" width="307" height="240" alt="" loading="lazy"><video src="img/work/v/v6.mp4" poster="img/work/v/v6.webp" width="1280" height="376" muted loop playsinline autoplay preload="none" aria-hidden="true"></video><img src="img/work/t/i066.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i069.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i036.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i040.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i072.webp" width="819" height="240" alt="" loading="lazy"><img src="img/work/t/i075.webp" width="520" height="234" alt="" loading="lazy"><img src="img/work/t/i010.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i018.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i050.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i052.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i001.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i004.webp" width="307" height="240" alt="" loading="lazy"><video src="img/work/v/v4.mp4" poster="img/work/v/v4.webp" width="1020" height="300" muted loop playsinline autoplay preload="none" aria-hidden="true"></video><img src="img/work/t/i059.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i062.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i082.webp" width="816" height="240" alt="" loading="lazy"><img src="img/work/t/i083.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i087.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i091.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i043.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i046.webp" width="307" height="240" alt="" loading="lazy"><video src="img/work/v/v6.mp4" poster="img/work/v/v6.webp" width="1280" height="376" muted loop playsinline autoplay preload="none" aria-hidden="true"></video><img src="img/work/t/i066.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i069.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i036.webp" width="532" height="240" alt="" loading="lazy"><img src="img/work/t/i040.webp" width="307" height="240" alt="" loading="lazy"><img src="img/work/t/i072.webp" width="819" height="240" alt="" loading="lazy"><img src="img/work/t/i075.webp" width="520" height="234" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <h2 id="contact-h" class="rv">Need a promo kit?</h2>
+    <div class="cells">
+      <button aria-live="polite" class="cell" type="button" id="copy-mail" data-mail="patrickangelosandoval@gmail.com" title="Copy the address"><span id="copy-label">Copy patrickangelosandoval@gmail.com</span></button>
+      <a class="cell" href="https://linkedin.com/in/patrick-sandoval-8133aa132" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="cell go" href="mailto:patrickangelosandoval@gmail.com?subject=Promo%20kit%20enquiry&amp;body=Hi%20Patrick%2C%0A%0ABrand%3A%20%0AWhat%20we%20need%3A%20%0ADeadline%3A%20">Email me</a>
     </div>
   </div>
 </section>
 
-<section class="section-padding" id="design">
-  <div class="container">
-    <p class="eyebrow mb-2">Design Work</p>
-    <h2 class="mb-3">Complete promo sets: every size, one consistent look</h2>
-    <p class="mb-4" style="max-width: 62ch;">I design ads, pop-ups, carousel banners, phone guides and share cards for online brands, and adapt the same campaign from one brand to the next. Copy is in Brazilian Portuguese, checked for accents and typos.</p>
-    <div class="mb-5">
-      <span class="format-chip">Ad 920×720</span><span class="format-chip">Pop-up 920×720</span><span class="format-chip">Carousel 1020×300</span><span class="format-chip">Tile 500×100</span><span class="format-chip">Phone guide 1440×996</span><span class="format-chip">Story 720×1280</span><span class="format-chip">Share 1280×720</span><span class="format-chip">Banner 960×224</span>
-    </div>
-
-    <div class="row g-4 mb-4">
-      <div class="col-lg-5">
-        <p class="eyebrow mb-2">Case study 01</p>
-        <h3 class="mb-3">One campaign, two brands</h3>
-        <dl class="case-psr">
-          <dt>Brief</dt><dd>The same promotions had to launch on two sister platforms, 567Rio and 123Rio, without either one looking like a copy of the other.</dd>
-          <dt>What I did</dt><dd>Kept the layout and message hierarchy, then rebuilt each brand's world: green and gold vs. cream and deep teal, Brazil-jersey mascots vs. carnival mascots, and each logo lockup.</dd>
-          <dt>Result</dt><dd>Matching sets the team can launch side by side, with the same mascot kept for each promo across every format.</dd>
-        </dl>
-      </div>
-      <div class="col-lg-7 d-grid gap-4">
-        <div class="card-custom">
-          <div class="pair-title"><h5 class="mb-0">Daily reward: R$ 888</h5><span>Ad · 920×720</span></div>
-          <div class="pair-imgs">
-            <a class="shot" href="img/design/567_ad1.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad1.webp" alt="567Rio ad: 12 times a day, max reward R$ 888, lion mascot on a throne" loading="lazy" width="920" height="720"></a>
-            <a class="shot" href="img/design/123_ad1.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad1.webp" alt="123Rio ad: same R$ 888 promo with a carnival rabbit mascot" loading="lazy" width="920" height="720"></a>
-          </div>
-        </div>
-        <div class="card-custom">
-          <div class="pair-title"><h5 class="mb-0">VIP members</h5><span>Ad · 920×720</span></div>
-          <div class="pair-imgs">
-            <a class="shot" href="img/design/567_ad3.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad3.webp" alt="567Rio VIP ad with tiger and rabbit in Brazil jerseys" loading="lazy" width="920" height="720"></a>
-            <a class="shot" href="img/design/123_ad3.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad3.webp" alt="123Rio VIP ad with carnival tiger and rabbit holding a VIP coin" loading="lazy" width="920" height="720"></a>
-          </div>
-        </div>
-        <div class="card-custom">
-          <div class="pair-title"><h5 class="mb-0">Download the app</h5><span>Ad with QR · 920×720</span></div>
-          <div class="pair-imgs">
-            <a class="shot" href="img/design/567_ad6.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad6.webp" alt="567Rio app download ad with QR code and toucan mascot" loading="lazy" width="920" height="720"></a>
-            <a class="shot" href="img/design/123_ad6.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad6.webp" alt="123Rio app download ad with QR code and carnival monkey mascot" loading="lazy" width="920" height="720"></a>
-          </div>
-        </div>
-        <div class="card-custom">
-          <div class="pair-title"><h5 class="mb-0">Savings fund, 50%</h5><span>Ad with steps · 920×720</span></div>
-          <div class="pair-imgs">
-            <a class="shot" href="img/design/567_ad8.webp" target="_blank"><span class="tag">567Rio</span><img src="img/design/567_ad8.webp" alt="567Rio savings fund ad with three-step explainer and panda mascot" loading="lazy" width="920" height="720"></a>
-            <a class="shot" href="img/design/123_ad8.webp" target="_blank"><span class="tag">123Rio</span><img src="img/design/123_ad8.webp" alt="123Rio savings fund ad with steps, carnival panda and phone mockup" loading="lazy" width="920" height="720"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-4 mt-4">
-      <div class="col-12">
-        <p class="eyebrow mb-2">Case study 02</p>
-        <h3 class="mb-2">Every format, one brand</h3>
-        <p class="mb-4" style="max-width: 62ch;">123Rio needed its promos in every placement on its site and app. I designed each size from one system (cream panel, teal border, logo tab, one mascot per promo), including step-by-step phone guides that walk users through the app.</p>
-      </div>
-      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_pop1.webp" target="_blank"><img src="img/design/123_pop1.webp" alt="123Rio referral pop-up: invite 1 person, get R$ 120" loading="lazy" width="920" height="720"></a><figcaption><span>Referral pop-up</span><span>920×720</span></figcaption></figure></div>
-      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_pop4.webp" target="_blank"><img src="img/design/123_pop4.webp" alt="123Rio 100% bonus pop-up with tiger and bull mascots" loading="lazy" width="920" height="720"></a><figcaption><span>Bonus code pop-up</span><span>920×720</span></figcaption></figure></div>
-      <div class="col-12"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_phone_missions.webp" target="_blank"><img src="img/design/123_phone_missions.webp" alt="123Rio phone guide: three phone screens showing how to reach the missions page" loading="lazy" width="1100" height="761"></a><figcaption><span>Phone guide: how to find missions</span><span>1440×996</span></figcaption></figure></div>
-      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_banner2.webp" target="_blank"><img src="img/design/123_banner2.webp" alt="123Rio carousel banner: R$ 888 reward with rabbit mascot" loading="lazy" width="1020" height="300"></a><figcaption><span>Carousel banner</span><span>1020×300</span></figcaption></figure></div>
-      <div class="col-md-6"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_banner3.webp" target="_blank"><img src="img/design/123_banner3.webp" alt="123Rio carousel banner: invite someone, earn up to R$ 120" loading="lazy" width="1020" height="300"></a><figcaption><span>Carousel banner</span><span>1020×300</span></figcaption></figure></div>
-      <div class="col-12"><figure class="design-fig card-custom"><a class="shot" href="img/design/123_share.webp" target="_blank"><img src="img/design/123_share.webp" alt="123Rio share card: invite someone to earn up to R$ 120, carnival girl mascot" loading="lazy" width="1100" height="619"></a><figcaption><span>Referral share card</span><span>1280×720</span></figcaption></figure></div>
-    </div>
-  </div>
-</section>
-
-<section class="section-padding" id="projects">
-  <div class="container">
-    <h2 class="mb-5">Web Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card-custom clickable-card" data-url="https://kaizenpath.org.au/">
-          <h4>Kaizen Path</h4>
-          <p>A community-led, non-profit organization dedicated to strengthening men’s physical, mental, and emotional wellbeing.</p>
-          <a href="https://kaizenpath.org.au/" target="_blank" class="project-link">Visit Website →</a>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card-custom clickable-card" data-url="https://poppy-thread-67721289.figma.site/#">
-          <h4>MEDIX</h4>
-          <p>A project showcasing UI structure and layout design of a concept system.</p>
-          <a href="https://poppy-thread-67721289.figma.site/#" target="_blank" class="project-link">View Showcase →</a>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="card-custom">
-          <h4>Casino Web Apps</h4>
-          <div class="casino-grid">
-            <div class="casino-division" onclick="window.open('https://777-full.com', '_blank')">777-Full</div>
-            <div class="casino-division" onclick="window.open('https://www.betbbrok.com', '_blank')">BetBbr</div>
-            <div class="casino-division" onclick="window.open('https://365xv.vip', '_blank')">365XV</div>
-            <div class="casino-division" onclick="window.open('https://a66bet.win', '_blank')">A66Bet</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer" id="contact">
-  <div class="container">
-    <h3>Contact</h3>
-    <p>patrickangelosandoval@gmail.com</p>
-    <div class="mt-4">
-      <a href="https://github.com/frxstph" class="mx-2 project-link">GitHub</a>
-      <a href="https://linkedin.com/in/patrick-sandoval-8133aa132" class="mx-2 project-link">LinkedIn</a>
-    </div>
-  </div>
+<footer class="foot">
+  <div class="t t1"><p>Promo kits and websites for online brands.</p><p class="legal">© 2026 Patrick Sandoval. Brand artwork designed by me for the brands named, shown as portfolio samples.</p></div>
+  <nav class="t t2" aria-label="Footer"><a href="#kits">Brand kits</a><a href="#same">Same promo</a><a href="#kit">One kit</a><a href="#web">Web</a><a href="#about">About</a></nav>
+  <div class="t t3"><span class="time" id="clock">Quezon City</span><span class="muted">Local time in Quezon City</span></div>
+  <div class="t t4"><span>Email</span><a href="mailto:patrickangelosandoval@gmail.com">patrickangelosandoval<wbr>@gmail.com</a></div>
+  <div class="t t5"><span>Patrick<br>Sandoval</span></div>
+  <a class="t t6" href="mailto:patrickangelosandoval@gmail.com?subject=Promo%20kit%20enquiry"><span>Start a project</span>
+    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M12 44 44 12M18 12h26v26" stroke="currentColor" stroke-width="4"/></svg></a>
 </footer>
 
+<dialog class="lb" id="lb" aria-label="Full-size view">
+  <button class="lb-btn lb-close" type="button" data-close>Close</button>
+  <div class="lb-stage"><img id="lb-img" alt=""></div>
+  <div class="lb-bar"><p class="lb-cap" id="lb-cap"></p><button class="lb-btn" type="button" data-step="-1">Previous</button><button class="lb-btn" type="button" data-step="1">Next</button></div>
+</dialog>
+
 <script>
-  const light = document.getElementById('cursor-light');
-  const cursor = document.querySelector('.custom-cursor');
+(function(){
+  var doc=document.documentElement; doc.classList.add('js');
+  var FR=[{"src": "img/work/f/i007.webp", "w": 1024, "h": 1024, "cap": "123Rio, app icon, 1024×1024"}, {"src": "img/work/f/i025.webp", "w": 1020, "h": 300, "cap": "123Rio, carousel banner, animated, 1020×300"}, {"src": "img/work/f/i010.webp", "w": 710, "h": 320, "cap": "123Rio, promo-list card, 710×320"}, {"src": "img/work/f/i013.webp", "w": 710, "h": 320, "cap": "123Rio, promo-list card, 710×320"}, {"src": "img/work/f/i009.webp", "w": 710, "h": 320, "cap": "123Rio, promo-list card, 710×320"}, {"src": "img/work/f/i018.webp", "w": 920, "h": 720, "cap": "123Rio, pop-up, animated, 920×720"}, {"src": "img/work/f/i028.webp", "w": 1440, "h": 996, "cap": "123Rio, phone guide, 1440×996"}, {"src": "img/work/f/i032.webp", "w": 1280, "h": 720, "cap": "123Rio, share card, animated, 1280×720"}, {"src": "img/work/f/i048.webp", "w": 1024, "h": 1024, "cap": "567Rio, app icon, 1024×1024"}, {"src": "img/work/f/i053.webp", "w": 1020, "h": 300, "cap": "567Rio, carousel banner, animated, 1020×300"}, {"src": "img/work/f/i050.webp", "w": 710, "h": 320, "cap": "567Rio, promo-list card, 710×320"}, {"src": "img/work/f/i051.webp", "w": 710, "h": 320, "cap": "567Rio, promo-list card, 710×320"}, {"src": "img/work/f/i049.webp", "w": 710, "h": 320, "cap": "567Rio, promo-list card, animated, 710×320"}, {"src": "img/work/f/i052.webp", "w": 920, "h": 720, "cap": "567Rio, pop-up, animated, 920×720"}, {"src": "img/work/f/i054.webp", "w": 1440, "h": 996, "cap": "567Rio, phone guide, 1440×996"}, {"src": "img/work/f/i055.webp", "w": 1280, "h": 720, "cap": "567Rio, share card, animated, 1280×720"}, {"src": "img/work/f/i000.webp", "w": 1024, "h": 1024, "cap": "11Rio, app icon, 1024×1024"}, {"src": "img/work/f/i005.webp", "w": 1020, "h": 300, "cap": "11Rio, carousel banner, animated, 1020×300"}, {"src": "img/work/f/i001.webp", "w": 710, "h": 320, "cap": "11Rio, promo-list card, 710×320"}, {"src": "img/work/f/i002.webp", "w": 710, "h": 320, "cap": "11Rio, promo-list card, 710×320"}, {"src": "img/work/f/i003.webp", "w": 710, "h": 320, "cap": "11Rio, promo-list card, animated, 710×320"}, {"src": "img/work/f/i004.webp", "w": 920, "h": 720, "cap": "11Rio, pop-up, animated, 920×720"}, {"src": "img/work/f/i006.webp", "w": 1440, "h": 996, "cap": "11Rio, phone guide, 1440×996"}, {"src": "img/work/f/i056.webp", "w": 1024, "h": 1024, "cap": "7FA.com, app icon, 1024×1024"}, {"src": "img/work/f/i060.webp", "w": 1020, "h": 300, "cap": "7FA.com, carousel banner, 1020×300"}, {"src": "img/work/f/i059.webp", "w": 710, "h": 320, "cap": "7FA.com, promo-list card, 710×320"}, {"src": "img/work/f/i057.webp", "w": 710, "h": 320, "cap": "7FA.com, promo-list card, 710×320"}, {"src": "img/work/f/i058.webp", "w": 710, "h": 320, "cap": "7FA.com, promo-list card, 710×320"}, {"src": "img/work/f/i062.webp", "w": 920, "h": 720, "cap": "7FA.com, pop-up, animated, 920×720"}, {"src": "img/work/f/i063.webp", "w": 1440, "h": 996, "cap": "7FA.com, phone guide, animated, 1440×996"}, {"src": "img/work/f/i061.webp", "w": 1125, "h": 2436, "cap": "7FA.com, splash screen, 1125×2436"}, {"src": "img/work/f/i079.webp", "w": 1024, "h": 1024, "cap": "A66BET, app icon, 1024×1024"}, {"src": "img/work/f/i084.webp", "w": 1500, "h": 300, "cap": "A66BET, banner, 1500×300"}, {"src": "img/work/f/i082.webp", "w": 1020, "h": 300, "cap": "A66BET, carousel banner, animated, 1020×300"}, {"src": "img/work/f/i080.webp", "w": 710, "h": 320, "cap": "A66BET, promo-list card, 710×320"}, {"src": "img/work/f/i081.webp", "w": 710, "h": 320, "cap": "A66BET, promo-list card, 710×320"}, {"src": "img/work/f/i083.webp", "w": 920, "h": 720, "cap": "A66BET, pop-up, animated, 920×720"}, {"src": "img/work/f/i085.webp", "w": 1440, "h": 996, "cap": "A66BET, phone guide, animated, 1440×996"}, {"src": "img/work/f/i086.webp", "w": 1024, "h": 1024, "cap": "bb8bet, app icon, 1024×1024"}, {"src": "img/work/f/i090.webp", "w": 1020, "h": 300, "cap": "bb8bet, carousel banner, animated, 1020×300"}, {"src": "img/work/f/i087.webp", "w": 710, "h": 320, "cap": "bb8bet, promo-list card, 710×320"}, {"src": "img/work/f/i088.webp", "w": 710, "h": 320, "cap": "bb8bet, promo-list card, 710×320"}, {"src": "img/work/f/i089.webp", "w": 710, "h": 320, "cap": "bb8bet, promo-list card, animated, 710×320"}, {"src": "img/work/f/i091.webp", "w": 920, "h": 720, "cap": "bb8bet, pop-up, animated, 920×720"}, {"src": "img/work/f/i092.webp", "w": 1440, "h": 996, "cap": "bb8bet, phone guide, animated, 1440×996"}, {"src": "img/work/f/i041.webp", "w": 1024, "h": 1024, "cap": "4bbet, app icon, 1024×1024"}, {"src": "img/work/f/i047.webp", "w": 1020, "h": 300, "cap": "4bbet, carousel banner, 1020×300"}, {"src": "img/work/f/i043.webp", "w": 710, "h": 320, "cap": "4bbet, promo-list card, 710×320"}, {"src": "img/work/f/i044.webp", "w": 710, "h": 320, "cap": "4bbet, promo-list card, 710×320"}, {"src": "img/work/f/i045.webp", "w": 710, "h": 320, "cap": "4bbet, promo-list card, 710×320"}, {"src": "img/work/f/i046.webp", "w": 920, "h": 720, "cap": "4bbet, pop-up, animated, 920×720"}, {"src": "img/work/f/i042.webp", "w": 1125, "h": 2436, "cap": "4bbet, splash screen, 1125×2436"}, {"src": "img/work/f/i064.webp", "w": 1024, "h": 1024, "cap": "83ll.com, app icon, 1024×1024"}, {"src": "img/work/f/i068.webp", "w": 1020, "h": 300, "cap": "83ll.com, carousel banner, animated, 1020×300"}, {"src": "img/work/f/i066.webp", "w": 710, "h": 320, "cap": "83ll.com, promo-list card, 710×320"}, {"src": "img/work/f/i065.webp", "w": 710, "h": 320, "cap": "83ll.com, promo-list card, 710×320"}, {"src": "img/work/f/i067.webp", "w": 710, "h": 320, "cap": "83ll.com, promo-list card, 710×320"}, {"src": "img/work/f/i069.webp", "w": 920, "h": 720, "cap": "83ll.com, pop-up, animated, 920×720"}, {"src": "img/work/f/i070.webp", "w": 1440, "h": 996, "cap": "83ll.com, phone guide, animated, 1440×996"}, {"src": "img/work/f/i034.webp", "w": 1024, "h": 1024, "cap": "365xv.com, app icon, 1024×1024"}, {"src": "img/work/f/i038.webp", "w": 1020, "h": 300, "cap": "365xv.com, carousel banner, 1020×300"}, {"src": "img/work/f/i036.webp", "w": 710, "h": 320, "cap": "365xv.com, promo-list card, 710×320"}, {"src": "img/work/f/i035.webp", "w": 710, "h": 320, "cap": "365xv.com, promo-list card, 710×320"}, {"src": "img/work/f/i037.webp", "w": 710, "h": 320, "cap": "365xv.com, promo-list card, animated, 710×320"}, {"src": "img/work/f/i040.webp", "w": 920, "h": 720, "cap": "365xv.com, pop-up, animated, 920×720"}, {"src": "img/work/f/i039.webp", "w": 1440, "h": 996, "cap": "365xv.com, phone guide, animated, 1440×996"}, {"src": "img/work/f/i077.webp", "w": 1024, "h": 1024, "cap": "KKKRIO, app icon, 1024×1024"}, {"src": "img/work/f/i071.webp", "w": 1280, "h": 375, "cap": "KKKRIO, carousel banner, 1280×375"}, {"src": "img/work/f/i072.webp", "w": 1280, "h": 375, "cap": "KKKRIO, carousel banner, 1280×375"}, {"src": "img/work/f/i073.webp", "w": 520, "h": 234, "cap": "KKKRIO, promo-list card, 520×234"}, {"src": "img/work/f/i074.webp", "w": 520, "h": 234, "cap": "KKKRIO, promo-list card, 520×234"}, {"src": "img/work/f/i075.webp", "w": 520, "h": 234, "cap": "KKKRIO, promo-list card, 520×234"}, {"src": "img/work/f/i076.webp", "w": 798, "h": 627, "cap": "KKKRIO, floating pop-up, 798×627"}, {"src": "img/work/f/i078.webp", "w": 1440, "h": 996, "cap": "KKKRIO, phone guide, animated, 1440×996"}, {"src": "img/work/f/i025.webp", "w": 1020, "h": 300, "cap": "123Rio: Os membros VIP, carousel, 1020×300"}, {"src": "img/work/f/i024.webp", "w": 1020, "h": 300, "cap": "123Rio: Convide alguém, carousel, 1020×300"}, {"src": "img/work/f/i018.webp", "w": 920, "h": 720, "cap": "123Rio: Bônus de 100%, pop-up, 920×720"}, {"src": "img/work/f/i012.webp", "w": 710, "h": 320, "cap": "123Rio: Os membros VIP, promo card, 710×320"}, {"src": "img/work/f/i028.webp", "w": 1440, "h": 996, "cap": "123Rio: Missões, phone guide, 1440×996"}, {"src": "img/work/f/i016.webp", "w": 920, "h": 720, "cap": "123Rio: Convide 1 pessoa, pop-up, 920×720"}, {"src": "img/work/f/i014.webp", "w": 710, "h": 320, "cap": "123Rio: Primeiro depósito, promo card, 710×320"}, {"src": "img/work/f/i030.webp", "w": 1440, "h": 385, "cap": "123Rio: Junte-se Telegram, channel banner, 1440×385"}, {"src": "img/work/f/i020.webp", "w": 920, "h": 720, "cap": "123Rio: Os membros VIP, ad, 920×720"}, {"src": "img/work/f/i008.webp", "w": 710, "h": 320, "cap": "123Rio: Ofertas triplas, promo card, 710×320"}, {"src": "img/work/f/i021.webp", "w": 920, "h": 720, "cap": "123Rio: Baixe o app, ad with QR, 920×720"}, {"src": "img/work/f/i023.webp", "w": 1020, "h": 300, "cap": "123Rio: 12 vezes ao dia, carousel, 1020×300"}, {"src": "img/work/f/i007.webp", "w": 1024, "h": 1024, "cap": "123Rio: App icon, 1024×1024"}, {"src": "img/work/f/i015.webp", "w": 710, "h": 320, "cap": "123Rio: Bônus grátis, promo card, 710×320"}, {"src": "img/work/f/i017.webp", "w": 920, "h": 720, "cap": "123Rio: Convide seus amigos, pop-up, 920×720"}, {"src": "img/work/f/i032.webp", "w": 1280, "h": 720, "cap": "123Rio: Convide alguém, share card, 1280×720"}, {"src": "img/work/f/i011.webp", "w": 710, "h": 320, "cap": "123Rio: Use o código, promo card, 710×320"}, {"src": "img/work/f/i029.webp", "w": 1440, "h": 996, "cap": "123Rio: Telegram gift code, phone guide, 1440×996"}, {"src": "img/work/f/i022.webp", "w": 920, "h": 720, "cap": "123Rio: Fundo de previdência, ad, 920×720"}, {"src": "img/work/f/i026.webp", "w": 1020, "h": 300, "cap": "123Rio: Parcerias, carousel, 1020×300"}, {"src": "img/work/f/i031.webp", "w": 1440, "h": 385, "cap": "123Rio: Junte-se WhatsApp, channel banner, 1440×385"}, {"src": "img/work/f/i033.webp", "w": 960, "h": 224, "cap": "123Rio: Convide uma pessoa, share banner, 960×224"}, {"src": "img/work/f/i019.webp", "w": 920, "h": 720, "cap": "123Rio: 12 vezes ao dia, ad, 920×720"}];
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Mouse Move Logic (Desktop Only)
-  window.addEventListener('mousemove', (e) => {
-    light.style.setProperty('--x', e.clientX + 'px');
-    light.style.setProperty('--y', e.clientY + 'px');
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+  /* sheet frames: entrance stagger */
+  document.querySelectorAll('.run').forEach(function(run,ri){
+    run.querySelectorAll('.fr').forEach(function(f,fi){f.classList.add('rv');f.style.setProperty('--d',(Math.min(ri,4)*70+fi*45)+'ms');});
   });
 
-  // Tap Ripple Logic (Mobile Only)
-  window.addEventListener('touchstart', (e) => {
-    const touch = e.touches[0];
-    const ripple = document.createElement('div');
-    ripple.className = 'ripple';
-    ripple.style.left = touch.clientX + 'px';
-    ripple.style.top = touch.clientY + 'px';
-    document.body.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 600);
-  });
+  /* reveals */
+  var els=document.querySelectorAll('.rv, .shutter');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
+  } else { els.forEach(function(el){el.classList.add('is-in');}); }
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-in');});},2500);
 
-  const interactables = document.querySelectorAll('a, button, .btn, .theme-toggle, .card-custom, .tool-card, .tech-pill, .casino-division');
-  interactables.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-  });
+  /* videos: play only when visible */
+  var vids=document.querySelectorAll('video');
+  if(reduce){vids.forEach(function(v){v.removeAttribute('autoplay');v.pause();});}
+  else if('IntersectionObserver' in window){
+    var vo=new IntersectionObserver(function(es){es.forEach(function(en){var v=en.target; if(en.isIntersecting){v.preload='auto';var p=v.play(); if(p&&p.catch)p.catch(function(){});} else v.pause();});},{threshold:0.1});
+    vids.forEach(function(v){vo.observe(v);});
+  }
 
-  document.querySelectorAll('.clickable-card').forEach(card => {
-    card.addEventListener('click', function() {
-      const url = this.getAttribute('data-url');
-      if (url) window.open(url, '_blank');
+  /* same promo, nine brands */
+  var lift=document.getElementById('lift'), liftImg=document.getElementById('lift-img'), liftBrand=document.getElementById('lift-brand');
+  document.querySelectorAll('.pick').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(b.classList.contains('is-on')) return;
+      document.querySelectorAll('.pick').forEach(function(o){o.classList.remove('is-on');o.setAttribute('aria-pressed','false');});
+      b.classList.add('is-on'); b.setAttribute('aria-pressed','true');
+      var brand=b.getAttribute('data-brand'), src=b.getAttribute('data-src');
+      var pre=new Image(); pre.onload=function(){
+        if(!reduce){lift.classList.add('swap');lift.classList.remove('is-in');}
+        liftImg.src=src; liftImg.alt=brand+' promo-list card: Primeira recarga, ganhe até R$ 1000'; liftBrand.textContent=brand;
+        if(!reduce){requestAnimationFrame(function(){requestAnimationFrame(function(){lift.classList.remove('swap');lift.classList.add('is-in');});});}
+      }; pre.src=src;
     });
   });
 
-  function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-    document.body.classList.toggle('light-mode');
-  }
+  /* lightbox */
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img'), lbCap=document.getElementById('lb-cap'), cur=0, opener=null;
+  function show(n){cur=(n+FR.length)%FR.length; var f=FR[cur]; lbImg.src=f.src; lbImg.width=f.w; lbImg.height=f.h; lbImg.alt=f.cap; lbCap.textContent=f.cap;}
+  document.addEventListener('click',function(ev){
+    var t=ev.target.closest('[data-n]'); if(!t) return;
+    if(typeof lb.showModal!=='function'){window.open(FR[+t.getAttribute('data-n')].src,'_blank');return;}
+    opener=t; show(+t.getAttribute('data-n')); lb.showModal();
+  });
+  lb.addEventListener('click',function(ev){
+    var s=ev.target.closest('[data-step]'); if(s){show(cur+(+s.getAttribute('data-step')));return;}
+    if(ev.target.closest('[data-close]')||ev.target===lb||ev.target.classList.contains('lb-stage')) lb.close();
+  });
+  lb.addEventListener('keydown',function(ev){if(ev.key==='ArrowRight')show(cur+1); if(ev.key==='ArrowLeft')show(cur-1);});
+  lb.addEventListener('close',function(){if(opener)opener.focus();});
+
+  /* copy email */
+  var cm=document.getElementById('copy-mail'), note=document.getElementById('copy-label');
+  cm.addEventListener('click',function(){
+    var m=cm.getAttribute('data-mail');
+    function done(){note.textContent='Copied to clipboard';setTimeout(function(){note.textContent='Copy '+m;},2400);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(done,function(){location.href='mailto:'+m;});}
+    else location.href='mailto:'+m;
+  });
+
+  /* local time */
+  var clock=document.getElementById('clock');
+  function tick(){try{clock.textContent=new Intl.DateTimeFormat('en-PH',{hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'}).format(new Date());}catch(e){}}
+  tick(); setInterval(tick,30000);
+})();
 </script>
 </body>
 </html>
