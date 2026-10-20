@@ -174,7 +174,8 @@ ul{list-style:none;padding:0}
 .web{padding-block:clamp(100px,11vw,160px)}
 .web-col{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:start}
 .web-col h2{grid-column:3 / -1;font-size:var(--step-head);font-weight:800;font-stretch:125%;letter-spacing:-0.035em;margin-bottom:48px;line-height:.95}
-.web-col .g-sites{grid-column:3 / span 5}.web-col .g-tools{grid-column:8 / span 5}
+.web-col .g-sites{grid-column:3 / span 4}.web-col .g-tools{grid-column:8 / span 5}
+.web-col .group + .group{margin-top:0}
 .g-tools .group + .group{margin-top:36px}
 .group + .group{margin-top:44px}
 .group-name{font-size:var(--step-body);font-weight:800;font-stretch:125%;letter-spacing:-0.01em;color:var(--ink);margin-bottom:8px}
@@ -256,7 +257,7 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   .same-main{grid-column:1 / -1}
   .numbers-list{grid-column:1 / span 7}.numbers-media{grid-column:8 / span 5}
   .masonry{columns:3}
-  .web-col h2,.web-col .g-sites,.web-col .g-tools{grid-column:1 / -1}.web-col .g-tools{margin-top:44px}
+  .web-col h2,.web-col .g-sites,.web-col .g-tools{grid-column:1 / -1}.web-col .group.g-tools{margin-top:44px}.web-col .g-sites{grid-column:1 / -1}
   .facts{grid-column:1 / -1;display:flex;gap:28px;margin-top:32px;order:2}.facts p + p{margin-top:0}
   .bio{grid-column:1 / -1;order:1}
 }
@@ -295,7 +296,7 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
 
 <header class="band grid wrap">
   <div><a class="wordmark" href="#top">Patrick Sandoval</a><span class="role">Promo designer, Canva + AI</span></div>
-  <div><nav class="nav" aria-label="Sections"><a href="#kits">Brand kits</a><a href="#kit">One kit</a><a href="#game">Games</a><a href="#web">Web</a><a href="#about">About</a></nav></div>
+  <div><nav class="nav" aria-label="Sections"><a href="#kits">Brand kits</a><a href="#kit">One kit</a><a href="#game">Games</a><a href="#tools">Tools</a><a href="#about">About</a></nav></div>
   <div class="reach"><a class="btn" href="mailto:patrickangelosandoval@gmail.com?subject=Promo%20kit%20enquiry&amp;body=Hi%20Patrick%2C%0A%0ABrand%3A%20%0AWhat%20we%20need%3A%20%0ADeadline%3A%20">Email me</a></div>
 </header>
 
@@ -433,17 +434,10 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   <p class="wrap fate-credit">Up To Fate art: Quaternius (CC0) and Synty POLYGON asset packs.</p>
 </section>
 
-<section class="web wrap" id="web" aria-labelledby="web-h">
+<section class="web wrap" id="tools" aria-labelledby="web-h">
   <div class="web-col">
-    <h2 id="web-h" class="rv">Websites and tools</h2>
-    <div class="g-sites"><div class="group rv">
-      <p class="group-name">Websites</p>
-      <ul>
-        <li><a class="li" href="https://kaizenpath.org.au/" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#c0392b"></span><span class="li-name">Kaizen Path, men’s wellbeing non-profit</span></span><span class="li-v">kaizenpath.org.au</span></a></li>
-        <li><a class="li" href="https://poppy-thread-67721289.figma.site/" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#7a8a99"></span><span class="li-name">MEDIX, UI concept for a clinic system</span></span><span class="li-v">figma.site</span></a></li>
-      </ul>
-    </div></div>
-    <div class="g-tools"><div class="group rv">
+    <h2 id="web-h" class="rv">Tools</h2>
+    <div class="g-sites group rv">
       <p class="group-name">Design</p>
       <ul>
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#00c4cc"></span><span class="li-name">Canva</span></span><span class="li-v">every promo kit</span></li>
@@ -451,14 +445,14 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#f24e1e"></span><span class="li-name">Figma</span></span><span class="li-v">UI layouts</span></li>
       </ul>
     </div>
-    <div class="group rv">
+    <div class="g-tools group rv" style="--d:100ms">
       <p class="group-name">Build</p>
       <ul>
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#111"></span><span class="li-name">Claude Code</span></span><span class="li-v">sites, tools, both games</span></li>
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#e44d26"></span><span class="li-name">HTML, CSS, JavaScript</span></span><span class="li-v">front end</span></li>
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#478cbf"></span><span class="li-name">Godot and C#</span></span><span class="li-v">games</span></li>
       </ul>
-    </div></div>
+    </div>
   </div>
 </section>
 
