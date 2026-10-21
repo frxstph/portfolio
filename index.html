@@ -22,7 +22,8 @@
 :root{
   --bg:#ffffff; --surface:#f4f4f4; --surface-2:#e9e9e9; --ink:#111111; --muted:#6b6b6b;
   --accent:#1a4be0; --accent-2:#1640c4; --accent-ink:#ffffff; --field:#111111; --field-ink:#ffffff;
-  --m:20px; --gap:20px;
+  --m:20px; --gap:20px; --max:1680px;
+  --pad:max(var(--m),calc((100% - var(--max)) / 2));
   --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
   --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
   --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
@@ -42,7 +43,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 ::selection{background:var(--accent);color:#fff}
 h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
 ul{list-style:none;padding:0}
-.wrap{padding-inline:var(--m)}
+.wrap{padding-inline:var(--pad)}
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:var(--step-body);text-decoration:none;border-radius:0;transition:transform 140ms var(--ease-out),background-color 180ms ease}
@@ -65,12 +66,13 @@ ul{list-style:none;padding:0}
 .hero-sub{grid-column:10 / span 3;font-size:var(--step-body);line-height:1.45;padding-bottom:.6em}
 
 /* ---------- the sheet ---------- */
-.sheet{display:flex;flex-wrap:wrap;gap:8px;padding-inline:var(--m);padding-bottom:12px}
+.sheet{display:flex;flex-wrap:wrap;gap:8px;padding-inline:var(--pad);padding-bottom:12px}
+.sheet::after{content:"";flex:999 1 0}
 .run,.run-frames{display:contents}
 .run-title{flex:0 0 auto;width:136px;height:var(--row);overflow:hidden;background:var(--brand);color:#fff;padding:9px 11px;display:flex;flex-direction:column;font-size:var(--step-small);line-height:1.3}
 .run-name{font-weight:600;font-size:var(--step-body);line-height:1.15}
 .run-meta{opacity:1}
-.fr{height:var(--row);aspect-ratio:var(--r);flex:0 0 auto;background:var(--surface);overflow:hidden;transition:opacity 220ms ease,transform 160ms var(--ease-out)}
+.fr{height:var(--row);flex:var(--r) 1 calc(var(--row) * var(--r));max-width:calc(var(--row) * var(--r) * 1.6);background:var(--surface);overflow:hidden;transition:opacity 220ms ease,transform 160ms var(--ease-out)}
 .fr img{width:100%;height:100%;object-fit:cover;transition:transform 400ms var(--ease-soft)}
 .fr:hover img{transform:scale(1.06)}
 .fr:active{transform:scale(.97)}
@@ -109,9 +111,9 @@ ul{list-style:none;padding:0}
 
 /* ---------- numbers ---------- */
 .numbers{padding-block:clamp(120px,14vw,200px)}
-.numbers-list{grid-column:2 / span 6}
-.numbers-list h2{font-size:var(--step-lead);font-weight:800;font-stretch:125%;margin:0 0 40px 244px;line-height:1.1;letter-spacing:-0.015em}
-.nrow{display:grid;grid-template-columns:220px 1fr;column-gap:24px;align-items:center;margin-bottom:30px}
+.numbers-list{grid-column:2 / span 6;--ncol:220px}
+.numbers-list h2{font-size:var(--step-lead);font-weight:800;font-stretch:125%;margin:0 0 40px calc(var(--ncol) + 24px);line-height:1.1;letter-spacing:-0.015em}
+.nrow{display:grid;grid-template-columns:var(--ncol) 1fr;column-gap:24px;align-items:center;margin-bottom:30px}
 .nrow dt{text-align:right;font-size:var(--step-head);font-weight:800;font-stretch:125%;font-variant-numeric:tabular-nums;letter-spacing:-0.035em;line-height:.85}
 .nrow dd{padding-top:0}
 .nrow dd{max-width:40ch}
@@ -124,7 +126,7 @@ ul{list-style:none;padding:0}
 .kit-head{align-items:end;margin-bottom:56px}
 .kit-head h2{grid-column:1 / span 6;font-size:var(--step-head);font-weight:800;font-stretch:125%;letter-spacing:-0.035em;line-height:.95}
 .kit-head p{grid-column:8 / span 5;font-size:var(--step-lead);line-height:1.3;max-width:32ch}
-.masonry{columns:4;column-gap:8px;padding-inline:var(--m)}
+.masonry{columns:4;column-gap:8px;padding-inline:var(--pad)}
 .tile{break-inside:avoid;margin:0 0 18px}
 .tile-btn{display:block;width:100%;background:var(--surface);overflow:hidden}
 .tile-btn img,.tile-btn video{width:100%;height:auto;transition:transform 400ms var(--ease-soft)}
@@ -177,6 +179,7 @@ ul{list-style:none;padding:0}
 .web-col .g-sites{grid-column:3 / span 4}.web-col .g-tools{grid-column:8 / span 5}
 .web-col .group + .group{margin-top:0}
 .g-tools .group + .group{margin-top:36px}
+.web-col .group.g-web{grid-column:3 / -1;margin-top:56px}
 .group + .group{margin-top:44px}
 .group-name{font-size:var(--step-body);font-weight:800;font-stretch:125%;letter-spacing:-0.01em;color:var(--ink);margin-bottom:8px}
 .li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;min-height:40px;padding-block:7px;color:var(--ink);text-decoration:none}
@@ -212,7 +215,7 @@ a.li:hover .li-name{color:var(--accent)}
 .cells-notes{margin-top:12px;font-size:var(--step-small)}
 
 /* ---------- footer ---------- */
-.foot{background:var(--field);color:var(--field-ink);padding:clamp(48px,6vw,80px) var(--m) 24px}
+.foot{background:var(--field);color:var(--field-ink);padding:clamp(48px,6vw,80px) var(--pad) 24px}
 .foot-name{font-size:var(--step-display);letter-spacing:-0.04em;line-height:.88}
 .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 32px;margin-top:clamp(40px,5vw,64px);font-size:var(--step-small);color:#a9a9a9}
 .foot-row p{max-width:60ch}
@@ -255,9 +258,10 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   .display{grid-column:1 / -1}.hero-sub{grid-column:1 / span 8;margin-top:18px}
   .same-aside{grid-column:1 / -1;margin-bottom:28px}.same-aside .note{margin-top:14px}
   .same-main{grid-column:1 / -1}
-  .numbers-list{grid-column:1 / span 7}.numbers-media{grid-column:8 / span 5}
+  .numbers-list{grid-column:1 / span 7;--ncol:9.5rem}.numbers-media{grid-column:8 / span 5}
+  .kit-head h2,.kit-head p{grid-column:1 / -1}.kit-head p{margin-top:16px}
   .masonry{columns:3}
-  .web-col h2,.web-col .g-sites,.web-col .g-tools{grid-column:1 / -1}.web-col .group.g-tools{margin-top:44px}.web-col .g-sites{grid-column:1 / -1}
+  .web-col h2,.web-col .g-sites,.web-col .g-tools{grid-column:1 / -1}.web-col .group.g-tools{margin-top:44px}.web-col .g-sites,.web-col .group.g-web{grid-column:1 / -1}
   .facts{grid-column:1 / -1;display:flex;gap:28px;margin-top:32px;order:2}.facts p + p{margin-top:0}
   .bio{grid-column:1 / -1;order:1}
 }
@@ -276,11 +280,10 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   .run:first-child .run-title{margin-top:0}
   .picks{grid-template-columns:repeat(2,1fr)}
   .numbers-list{grid-column:1 / -1}
-  .numbers-list h2{margin-left:0}
-  .nrow{grid-template-columns:120px 1fr;column-gap:16px}
-  .nrow dt{font-size:var(--step-lead)}
+  .numbers-list h2{margin:0 0 28px}
+  .nrow{grid-template-columns:1fr;row-gap:6px;margin-bottom:26px}
+  .nrow dt{text-align:left}
   .numbers-media{grid-column:1 / -1;margin-top:28px;width:78%;justify-self:end}
-  .kit-head h2,.kit-head p{grid-column:1 / -1}.kit-head p{margin-top:16px}
   .masonry{columns:2;column-gap:6px}
   .li{min-height:44px}
   .facts{flex-wrap:wrap;gap:16px 24px}
@@ -385,7 +388,7 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
 <section class="game" id="game" aria-labelledby="game-h">
   <div class="game-head grid wrap">
     <h2 id="game-h" class="rv">Up To Code</h2>
-    <p class="rv" style="--d:90ms">A game I’m working on: a dungeon where the only controls are real Java. You write the code that moves and fights for the Slayer. Built in Godot with C#.</p>
+    <p class="rv" style="--d:90ms">A game I’m working on: a dungeon where the only controls are real Java codes.</p>
   </div>
   <div class="grid wrap">
     <figure class="game-main rv">
@@ -436,7 +439,7 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
 
 <section class="web wrap" id="tools" aria-labelledby="web-h">
   <div class="web-col">
-    <h2 id="web-h" class="rv">Tools</h2>
+    <h2 id="web-h" class="rv">Websites and tools</h2>
     <div class="g-sites group rv">
       <p class="group-name">Design</p>
       <ul>
@@ -451,6 +454,12 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#111"></span><span class="li-name">Claude Code</span></span><span class="li-v">sites, tools, both games</span></li>
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#e44d26"></span><span class="li-name">HTML, CSS, JavaScript</span></span><span class="li-v">front end</span></li>
         <li class="li"><span class="li-l"><span class="dot" style="--dot:#478cbf"></span><span class="li-name">Godot and C#</span></span><span class="li-v">games</span></li>
+      </ul>
+    </div>
+    <div class="g-web group rv" style="--d:200ms">
+      <p class="group-name">Websites</p>
+      <ul>
+        <li><a class="li" href="https://angel-farmaciasanjose.pages.dev/" target="_blank" rel="noopener"><span class="li-l"><span class="dot" style="--dot:#0a5d7a"></span><span class="li-name">Angel Drugstore &amp; Farmacia San Jose, pharmacy in Bulacan</span></span><span class="li-v">angel-farmaciasanjose.pages.dev</span></a></li>
       </ul>
     </div>
   </div>
@@ -484,7 +493,7 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
 <footer class="foot">
   <p class="foot-name" aria-hidden="true">Patrick Sandoval</p>
   <div class="foot-row">
-    <p>© 2026 Patrick Sandoval. Brand artwork designed by me for the brands named, shown as portfolio samples.</p>
+    <p>© 2026 Patrick Sandoval.</p>
     <nav aria-label="Elsewhere"><a href="https://github.com/frxstph" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/in/patrick-sandoval-8133aa132" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top</a></nav>
   </div>
 </footer>
