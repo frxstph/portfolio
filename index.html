@@ -180,6 +180,8 @@ ul{list-style:none;padding:0}
 .web-col .group + .group{margin-top:0}
 .g-tools .group + .group{margin-top:36px}
 .web-col .group.g-web{grid-column:3 / -1;margin-top:56px}
+.g-web ul{max-width:46rem}
+.g-web .li{flex-wrap:wrap;row-gap:2px}
 .group + .group{margin-top:44px}
 .group-name{font-size:var(--step-body);font-weight:800;font-stretch:125%;letter-spacing:-0.01em;color:var(--ink);margin-bottom:8px}
 .li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;min-height:40px;padding-block:7px;color:var(--ink);text-decoration:none}
@@ -261,9 +263,16 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   .numbers-list{grid-column:1 / span 7;--ncol:9.5rem}.numbers-media{grid-column:8 / span 5}
   .kit-head h2,.kit-head p{grid-column:1 / -1}.kit-head p{margin-top:16px}
   .masonry{columns:3}
-  .web-col h2,.web-col .g-sites,.web-col .g-tools{grid-column:1 / -1}.web-col .group.g-tools{margin-top:44px}.web-col .g-sites,.web-col .group.g-web{grid-column:1 / -1}
+  .web-col h2,.web-col .group.g-web{grid-column:1 / -1}.web-col .g-sites{grid-column:1 / span 6}.web-col .g-tools{grid-column:7 / span 6}
+  .cells{grid-template-columns:1fr 1fr}.cell:first-child{grid-column:1 / -1}
   .facts{grid-column:1 / -1;display:flex;gap:28px;margin-top:32px;order:2}.facts p + p{margin-top:0}
   .bio{grid-column:1 / -1;order:1}
+}
+/* ---------- small tablet ---------- */
+@media (max-width:900px){
+  .numbers-list h2{margin:0 0 28px}
+  .nrow{grid-template-columns:1fr;row-gap:6px;margin-bottom:26px}
+  .nrow dt{text-align:left}
 }
 /* ---------- phone ---------- */
 @media (max-width:640px){
@@ -271,7 +280,7 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   .band > div{grid-column:1 / -1!important;margin-top:0!important}
   .band{row-gap:14px}
   .band > div:nth-child(1){display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .band > div:nth-child(1){grid-column:1 / span 8!important;display:block}.band .reach{grid-column:9 / -1!important;grid-row:1;align-items:flex-end}.band > div:nth-child(2){grid-row:2}.band .reach .btn{min-height:40px;padding:0 14px;font-size:var(--step-small)}
+  .band > div:nth-child(1){grid-column:1 / span 8!important;display:block}.band .reach{grid-column:9 / -1!important;grid-row:1;align-items:flex-end}.band > div:nth-child(2){grid-row:2}.band .reach .btn{min-height:44px;padding:0 14px;font-size:var(--step-small)}
   .hero-head{padding-top:36px;padding-bottom:20px}
   .display{font-size:clamp(3rem,13.2vw,4.25rem);line-height:.95}
   .hero-sub{grid-column:1 / -1;margin-top:14px}
@@ -280,18 +289,23 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   .run:first-child .run-title{margin-top:0}
   .picks{grid-template-columns:repeat(2,1fr)}
   .numbers-list{grid-column:1 / -1}
-  .numbers-list h2{margin:0 0 28px}
-  .nrow{grid-template-columns:1fr;row-gap:6px;margin-bottom:26px}
-  .nrow dt{text-align:left}
   .numbers-media{grid-column:1 / -1;margin-top:28px;width:78%;justify-self:end}
   .masonry{columns:2;column-gap:6px}
   .li{min-height:44px}
+  .web-col .g-sites,.web-col .g-tools{grid-column:1 / -1}.web-col .group.g-tools{margin-top:44px}
+  .g-web .li-v{flex-basis:100%;text-align:left;padding-left:24px}
   .facts{flex-wrap:wrap;gap:16px 24px}
   .strip img,.strip video{height:110px}
   .contact h2{margin-top:48px}
   .cells{grid-template-columns:1fr}
   .cell{min-height:60px}
   .lb-bar{flex-wrap:wrap}.lb-cap{flex-basis:100%;order:-1}
+}
+/* ---------- touch: text links get a 44px tap height ---------- */
+@media (pointer:coarse){
+  .nav{row-gap:0}
+  .nav a,.foot-row a,.facts a{display:inline-flex;align-items:center;min-height:44px}
+  .nav a::after{bottom:8px}
 }
 </style>
 </head>
@@ -483,7 +497,7 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   <div class="wrap">
     <h2 id="contact-h" class="rv">Need a promo kit?</h2>
     <div class="cells">
-      <button aria-live="polite" class="cell" type="button" id="copy-mail" data-mail="patrickangelosandoval@gmail.com" title="Copy the address"><span id="copy-label">Copy patrickangelosandoval@gmail.com</span></button>
+      <button aria-live="polite" class="cell" type="button" id="copy-mail" data-mail="patrickangelosandoval@gmail.com" title="Copy the address"><span id="copy-label">Copy patrickangelosandoval@<wbr>gmail.com</span></button>
       <a class="cell" href="https://linkedin.com/in/patrick-sandoval-8133aa132" target="_blank" rel="noopener">LinkedIn</a>
       <a class="cell go" href="mailto:patrickangelosandoval@gmail.com?subject=Promo%20kit%20enquiry&amp;body=Hi%20Patrick%2C%0A%0ABrand%3A%20%0AWhat%20we%20need%3A%20%0ADeadline%3A%20">Email me</a>
     </div>
@@ -563,10 +577,10 @@ dialog.lb::backdrop{background:rgba(17,17,17,.94)}
   lb.addEventListener('close',function(){if(opener)opener.focus();});
 
   /* copy email */
-  var cm=document.getElementById('copy-mail'), note=document.getElementById('copy-label');
+  var cm=document.getElementById('copy-mail'), note=document.getElementById('copy-label'), label=note.innerHTML;
   cm.addEventListener('click',function(){
     var m=cm.getAttribute('data-mail');
-    function done(){note.textContent='Copied to clipboard';setTimeout(function(){note.textContent='Copy '+m;},2400);}
+    function done(){note.textContent='Copied to clipboard';setTimeout(function(){note.innerHTML=label;},2400);}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(done,function(){location.href='mailto:'+m;});}
     else location.href='mailto:'+m;
   });
